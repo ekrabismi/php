@@ -1,0 +1,53 @@
+<body onload="set_ie6size()">
+<?php include $skin_dir.'/templates/ucp_header.pxtm';?>
+
+<div id="mda" class="midarea" style="background-image:none">
+<script type="text/javascript">
+<!--
+function sh(x){
+a=document.getElementById(x)
+if(typeof a=='object'){opa_st(a,1)}
+return false}
+
+function el(x){
+for(i=0;i < 100;i++){
+j='s'+i
+a=document.getElementById(j)
+if(typeof a=='object' && a!=null){
+if(x==0){a.style.display='none'}
+else{a.style.display='block'}
+}}return false}
+--></script>
+<div class="hlp" style="margin:20px">
+
+<?php 
+include 'lang/languages.inc';
+
+if(isset($lang_help[$options[0]])){$set_lang='lang/'.$lang_help[$options[0]];}else{$set_lang='lang/'.$lang_help[0];}
+if(!is_file($set_lang)){$set_lang='lang/'.$lang_help[0];}
+
+include $set_lang;
+for($i=0;$i<count($help_title);$i++){
+print '<div class="hlp" style="font-weight:bold"><a href="info.php?why=link" onclick="el(0);return sh(\'s'.$i.'\')">'.$help_title[$i].'</a></div>';
+print '<div class="hlp" id="s'.$i.'" style="display:none">'.$help_descr[$i];
+print '<div style="clear:both;border-bottom:1px dotted #666">&nbsp;</div></div>';}
+?>
+</div><br /></div>
+
+<div class="botarea">
+
+</div>
+
+<script type="text/javascript">
+document.getElementById('tb5').style.color=ch_current;
+set_ie6size(); window.onresize=set_ie6size; el(1);
+flsh_cht=set_snd('<?php print $skin_dir.'/sounds/snd'. $options[4];?>.swf');
+
+tbl_print=0; tbl_add=0; ajx_sett='0|0|0|0';
+ajx_updt=<?php print $settings['main_refresh'];?>;
+
+setTimeout('onlist_recev()',<?php print $settings['ajax_delay'];?>*msie);
+setInterval('onlist_recev()',ajx_updt*1000);
+
+</script>
+</body></html>

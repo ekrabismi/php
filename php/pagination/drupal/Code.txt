@@ -1,0 +1,49 @@
+<?php
+print "<a href=\"http://localhost/drupaltest1/?q=admin/settings/pagination\">Input data Now </a><br><br>"; 
+$numrow=0;
+$limit=3;
+$lower=0;
+$upper=-1;
+$pages= 0;
+
+$result = db_query("Select * from student");
+  while ($item = db_fetch_object($result)) {
+  $numrow++;
+  }
+
+$pages= ceil($numrow/$limit);
+
+print "Number rows = $numrow<br>";
+print "Rows per page (limit) = $limit<br>";
+print "Pages = $pages<br>";
+
+for($i=1;$i<=$pages; $i++)
+{
+$lower = $upper+1;
+$upper = $lower + $limit - 1; 
+
+print "<a href=\"http://localhost/drupaltest1/?q=node/1&lower=$lower&upper=$upper\">";
+print "$i</a> , ";
+//print "$i [$lower - $upper ] , ";
+}
+//print "<br>Lower=".$_REQUEST['lower']  . "Upper=".$_REQUEST['upper']."<br>";
+$result = db_query("Select * from student");
+ $rows = array();
+  while ($item = db_fetch_object($result)) {
+    $rows[] = $item;
+  }
+
+//print_r($rows);
+
+print "<br><br>";
+//if($_REQUEST['lower'])
+{
+ $lower=$_REQUEST['lower'];
+ $upper=$_REQUEST['upper']; 
+ for($i=$lower; $i<=$upper;$i++) 
+ { 
+   print $rows[$i]->name . " " . $rows[$i]->roll . " " . $rows[$i]->address . "<br>";   
+ }
+}
+
+?>

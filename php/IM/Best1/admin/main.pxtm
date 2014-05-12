@@ -1,0 +1,90 @@
+<?php 
+
+if($dbss['type']!='sqlite' && $dbss['type']!='pdo_sqlite'){
+$query='SELECT COUNT(*) AS posts, COUNT(DISTINCT(usr_id)) AS users, MIN(timestamp) as sdate FROM '.$dbss['prfx'].'_lines';
+$result=neutral_query($query); $stats=neutral_fetch_array($result);}
+else{$stats=array();$stats['posts']='~';$stats['users']='~';$stats['sdate']=0;}
+
+$stats['sdate']=gmdate('Y-m-d',$stats['sdate']);
+
+$overview=str_replace('%POSTS_NUM%','<b style="font-size:14px">'.$stats['posts'].'</b>',$lang['sl1_desc']);
+$overview=str_replace('%USERS_NUM%','<b style="font-size:14px">'.$stats['users'].'</b>',$overview);
+$overview=str_replace('%SINCE_NUM%','<b>'.$stats['sdate'].'</b>',$overview);
+
+$query='SELECT COUNT(*) AS crequests FROM '.$dbss['prfx'].'_invite';
+$result=neutral_query($query); $stats=neutral_fetch_array($result);
+
+$overview=str_replace('%CREQS_NUM%','<b style="font-size:14px">'.$stats['crequests'].'</b>',$overview);
+
+
+$keep_time=$settings['chat_refresh']*$settings['main_ofactor'];
+$query='DELETE FROM '.$dbss['prfx']."_chatting WHERE ($timestamp-timestamp)>$keep_time";
+neutral_query($query); 
+if($dbss['type']!='sqlite' && $dbss['type']!='pdo_sqlite'){
+$query='SELECT COUNT(DISTINCT(a.usr_id)) AS chatting FROM  '.$dbss['prfx'].'_chatting a, '.$dbss['prfx'].'_chatting b WHERE a.usr_id=b.chatto AND a.chatto=b.usr_id';
+$result=neutral_query($query); $stats=neutral_fetch_array($result);}
+else{$stats=array();$stats['chatting']='~';}
+$overview=str_replace('%CHATTING_NUM%','<b style="font-size:14px">'.$stats['chatting'].'</b>',$overview);
+
+$keep_time=$settings['main_refresh']*$settings['main_ofactor'];
+$query='SELECT COUNT(*) as online FROM '.$dbss['prfx']."_online WHERE ($timestamp-rtime)<$keep_time";
+$result=neutral_query($query); $stats=neutral_fetch_array($result); 
+$overview=str_replace('%ONLINE_NUM%','<b style="font-size:14px">'.$stats['online'].'</b>',$overview);
+
+?>
+<script type="text/javascript">
+<!--
+
+function http_obj(){
+if(typeof window.external=='object' && typeof document.all=='object'){
+r=new ActiveXObject("Microsoft.XMLHTTP")}
+else{r=new XMLHttpRequest()}return r}
+
+function res_send(a,b,c){
+document.getElementById('nb').style.display='none';
+ajx_sett='ajx_sett='+a+'|'+b+'|'+c;
+htto=http_obj(); htto.open('post','admin_aj.php');
+htto.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+htto.onreadystatechange=res_print;htto.send(ajx_sett);
+document.getElementById('slog').innerHTML='<div class="title"><?php print $lang['loading'];?></div>'}
+
+function res_print(){
+if(htto.readyState==4){
+response=htto.responseText.toString();
+document.getElementById('slog').innerHTML=response;
+}}
+
+//-->
+</script>
+
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div style="margin:10px;text-align:right;white-space:nowrap">
+<a href="info.php?why=link" onclick="window.location='admin.php';return false"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="info.php?why=link" onclick="res_send(7,0,0);return false"><?php print $lang['users'];?></a> &middot;<br />
+<a href="info.php?why=link" onclick="res_send(6,0,0);return false"><?php print $lang['now_chatt'];?></a> &middot;<br />
+<a href="info.php?why=link" onclick="res_send(1,0,0);return false"><?php print $lang['top_users'];?></a> &middot;<br />
+<a href="info.php?why=link" onclick="res_send(2,0,0);return false"><?php print $lang['crequests'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+
+<div id="slog" style="text-align:justify">
+<div class="title"><?php print $lang['overview'];?></div>
+
+<p style="text-align:justify;line-height:150%"><?php print $overview;?></p>
+
+<div style="text-align:right"><span class="title">BlaB! IM <?php include 'version';?></span></div>
+
+</div>
+<div class="hr"></div>
+<div id="nb">
+<?php $notebook=htmrem($settings['notebook']); ?>
+<form id="fn" action="admin.php" method="post" style="margin:0px;padding:0px">
+<div class="title"><?php print $lang['notebook'];?></div>
+<p><textarea  name="notebook" style="width:100%;height:150px;overflow:auto" cols="10" rows="5"><?php print $notebook;?></textarea></p>
+<p>
+<input type="hidden" name="rdr" value="1" />
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.fn.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.fn.reset()" />
+</p></form></div>
+
+</td></tr></table>

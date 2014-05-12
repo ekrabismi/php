@@ -1,0 +1,45 @@
+<script type="text/javascript"><!--
+function chp(){
+a=document.forms.f1;
+if(a.cacp.value.length<5){a.cacp.value='';a.cacp.focus();}
+if(a.nacp.value.length<5){a.nacp.value='';a.nacp.focus();}
+if(a.nacp.value!=a.racp.value){a.nacp.value='';a.racp.value='';a.nacp.focus();}
+if(a.nacp.value.length>0 && a.cacp.value.length>0){return true}else{return false}}  // -->
+</script>
+<form id="f1" action="admin.php?q=acpkey" method="post" style="margin:0px;padding:0px" onsubmit="return chp()">
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=settings"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=options"><?php print $lang['settings'];?></a> &middot;<br />
+<a href="admin.php?q=database"><?php print $lang['database'];?></a> &middot;<br />
+<a href="admin.php?q=acpkey"><?php print $lang['acpkey'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+
+<div class="title"><?php print $lang['acpkey'];?></div>
+<p style="text-align:justify"><?php print $lang['st2_desc'];?></p>
+<div class="hr"></div>
+
+<table cellspacing="1" cellpadding="8" class="tbl">
+<tr class="tr2">
+<td><input type="password" name="cacp" style="width:130px" maxlength="18" /></td>
+<td><?php print $lang['cur_acpkey'];?></td>
+</tr>
+<tr class="tr1">
+<td><input type="password" name="nacp" style="width:130px" maxlength="18" /></td>
+<td><?php print $lang['new_acpkey'];?></td>
+</tr>
+<tr class="tr2">
+<td><input type="password" name="racp" style="width:130px" maxlength="18" /></td>
+<td><?php print $lang['ret_acpkey'];?></td>
+</tr>
+
+</table>
+
+<p>
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="ok=chp();if(ok){document.forms.f1.submit()}" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.f1.reset()" />
+</p>
+
+</td></tr></table>
+</form>

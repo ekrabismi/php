@@ -1,0 +1,47 @@
+<body onload="set_ie6size()">
+<?php include $skin_dir.'/templates/ucp_header.pxtm';?>
+
+<script type="text/javascript">function rst_from(){document.forms.fms.start_fr.value=0;}</script>
+
+<div id="mda" class="midarea"><div id="onltable"></div></div>
+
+<div class="botarea">
+
+<table cellspacing="0" style="width:100%">
+<tr><td class="botbar1">
+<?php print $lang['order'];?>:
+<a href="info.php?why=link" onclick="rst_from();document.forms.fms.order_az.value='0';document.forms.fms.submit();return false"><?php print $lang['time'];?></a> <b>&middot;</b> 
+<a href="info.php?why=link" onclick="rst_from();document.forms.fms.order_az.value='1';document.forms.fms.submit();return false"><?php print $lang['a-z'];?></a> 
+</td><td class="botbar2">
+<!-- PLEASE DO NOT REMOVE THIS LINE - THIS IS THE ONLY THING YOU PAID FOR THE SOFTWARE -->
+<a href="info.php?why=link" onclick="window.open('http://hot-things.net');return false">Powered by BlaB! IM</a>
+<!-- PLEASE DO NOT REMOVE THIS LINE - THIS IS THE ONLY THING YOU PAID FOR THE SOFTWARE -->
+ &nbsp;</td></tr></table>
+</div>
+
+<div id="s_usr" class="box_user"></div>
+
+
+<form id="fms" action="ucp_users.php" method="post" style="margin:0px;padding:0px"><p>
+<input type="hidden" name="order_az" value="<?php print $order_az;?>" />
+<input type="hidden" name="displ_ls" value="<?php print $displ_ls;?>" />
+<input type="hidden" name="start_fr" value="<?php print $start_fr;?>" />
+</p></form>
+
+<?php include $skin_dir.'/templates/ucp_footer.pxtm';?>
+
+<script type="text/javascript">
+document.getElementById('tb1').style.color=ch_current;
+set_ie6size(); window.onresize=set_ie6size;
+flsh_cht=set_snd('<?php print $skin_dir.'/sounds/snd'. $options[4];?>.swf');
+
+tbl_print=1; tbl_add=0; bim_budd='';
+ajx_sett='<?php print $order_az.'|'.$displ_ls.'|1|'.$start_fr;?>';
+ajx_updt=<?php print $settings['main_refresh'];?>;
+
+mm=document.getElementById('onltable');
+setTimeout('onlist_recev();opa_st(mm,1)',<?php print $settings['ajax_delay'];?>*msie);
+setInterval('onlist_recev()',ajx_updt*1000);
+
+</script>
+</body></html>

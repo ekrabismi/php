@@ -1,0 +1,36 @@
+body{color:#000;background-color:#eee;font-family:'trebuchet MS',sans-serif;font-size:12px}
+textarea{font-family:'courier new',monospace;font-size:12px;border:1px solid #ccc}
+input,select{font-size:12px;font-family:'trebuchet MS',sans-serif;border:1px solid #ccc}
+td,p,div,select,input{text-align:left;font-size:12px}
+img{border-width:0px}
+
+.mainbox{color:#000;background-color:#fff;width:700px;padding:1px;margin:auto;border:1px solid #072A66}
+.navbar1{font-family:'trebuchet MS',sans-serif;font-size:11px;font-weight:bold;background-color:#708491;color:#fff;padding:20px;text-transform:uppercase}
+.navbar2{font-family:'trebuchet MS',sans-serif;font-size:12px;font-weight:bold;background-color:#93A0A7;color:#fff;padding:8px;text-align:right;line-height:180%;}
+.content{padding:30px;padding-top:10px}
+.title{color:#708491;background-color:transparent;font-size:11px;font-weight:bold;text-transform:uppercase}
+.hr{border-top:1px dotted #5176B5;width:100%;height:10px;margin-top:20px}
+.btn{font-weight:bold;text-transform:uppercase;border:1px solid #708491;color:#000;background-color:#D3D8DE;padding:5px;text-align:center}
+
+.tbl{border:1px solid #708491;background-color:#fff;color:#000;width:100%}
+.tr0{background-color:#708491;color:#fff}
+.tr1{background-color:#EDF0F0;color:#000}
+.tr2{background-color:#D3D8DE;color:#000}
+.tdr{text-align:right}
+
+.ini{float:right;width:50px;height:50px;border:1px solid #fff;margin:1px}
+
+a:link{color:#708491;background-color:transparent}
+a:visited{color:#708491;background-color:transparent}
+a:hover{color:#000;background-color:transparent;text-decoration:none}
+a:active{color:#000;background-color:transparent}
+
+.navbar1 a:link{color:#fff;background-color:transparent;text-decoration:none}
+.navbar1 a:visited{color:#fff;background-color:transparent;text-decoration:none}
+.navbar1 a:hover{color:#000;background-color:transparent}
+.navbar1 a:active{color:#000;background-color:transparent}
+
+.navbar2 a:link{color:#fff;background-color:transparent;text-decoration:none}
+.navbar2 a:visited{color:#fff;background-color:transparent;text-decoration:none}
+.navbar2 a:hover{color:#000;background-color:transparent}
+.navbar2 a:active{color:#000;background-color:transparent}

@@ -1,0 +1,42 @@
+<body onload="set_ie6size()">
+
+<?php include $skin_dir.'/templates/ucp_header.pxtm';?>
+
+<form id="fms" action="ucp_name.php" method="post">
+<div id="mda" class="midarea" style="background-image:none">
+
+<div id="onltable" style="text-align:center">
+
+<table class="o_tbl" cellspacing="1" cellpadding="7" style="margin:auto;margin-top:60px;width:auto">
+<tr><td class="o_tdt" colspan="2"><b><?php print $lang['screen_name'];?></b></td></tr>
+<tr class="o_tr0">
+<td><input type="text" maxlength="16" name="guest_name" class="ste" /></td>
+<td>
+<input class="btn" type="submit" value="&nbsp;&nbsp; <?php print $lang['save'];?> &nbsp;&nbsp;" />
+</td></tr>
+</table>
+
+</div>
+
+</div>
+</form>
+
+<div class="botarea"></div>
+
+<?php include $skin_dir.'/templates/ucp_footer.pxtm';?>
+
+<script type="text/javascript">
+set_ie6size(); window.onresize=set_ie6size;
+flsh_cht=set_snd('<?php print $skin_dir.'/sounds/snd'. $options[4];?>.swf');
+
+tbl_print=0; tbl_add=0; ajx_sett='0|0|0|0';
+ajx_updt=<?php print $settings['main_refresh'];?>;
+
+setTimeout('onlist_recev()',<?php print $settings['ajax_delay'];?>*msie);
+setInterval('onlist_recev()',ajx_updt*1000);
+opa_st(document.getElementById('onltable'),1);
+
+</script>
+
+
+</body></html>

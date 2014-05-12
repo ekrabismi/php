@@ -1,0 +1,254 @@
+<?php 
+
+/* English */
+
+$lang=array();
+
+$lang['welcome']    = 'Hi, ';
+$lang['yes']        = 'Yes';
+$lang['no']         = 'No';
+$lang['all']        = 'All';
+$lang['none']       = 'None';
+$lang['back']       = 'Back';
+$lang['next']       = 'Next';
+$lang['buddy']      = 'Buddy';
+$lang['online']     = 'Online';
+$lang['offline']    = 'Offline';
+$lang['invisible']  = 'Invisible';
+$lang['buddies']    = 'Buddies';
+$lang['queries']    = 'Queries';
+$lang['crequests']  = 'Chat requests';
+$lang['help']       = 'Help';
+$lang['main']       = 'Stats &amp; Log';
+$lang['range']      = 'Range';
+$lang['entries']    = 'Entries';
+$lang['no_data']    = 'There are no entries! If you are out of range go back with the BACK link above...';
+$lang['loading']    = 'Loading...';
+$lang['admincp']    = 'Admin CP';
+$lang['settings']   = 'Settings';
+$lang['lookfeel']   = 'Look &amp; Feel';
+$lang['shortcuts']  = 'Files &amp; Shortcuts';
+$lang['globalcss']  = 'Global CSS';
+$lang['templates']  = 'Templates';
+$lang['bar']        = 'Bar';
+$lang['style']      = 'Style';
+$lang['elements']   = 'Elements';
+$lang['emoticons']  = 'Emoticons';
+$lang['aliases']    = 'Aliases';
+$lang['messages']   = 'Messages';
+$lang['session']    = 'Session';
+$lang['new_emo']    = 'New emoticon';
+$lang['new_ali']    = 'New alias';
+$lang['images']     = 'Images';
+$lang['js']         = 'JScript';
+$lang['cbox']       = 'Chatbox';
+$lang['lfcujs']     = '{Custom JavaScript code}';
+$lang['users']      = 'Users';
+$lang['guests']     = 'Guests';
+$lang['group']      = 'Group';
+$lang['link_group'] = 'Linked group';
+$lang['groups']     = 'Groups';
+$lang['add_group']  = 'Add group';
+$lang['group_name'] = 'Group name';
+$lang['gperm']      = 'Groups &amp; Permissions';
+$lang['dimport']    = 'Delete &amp; Link Groups';
+$lang['link']       = 'Link';
+$lang['edit']       = 'Edit';
+$lang['selected']   = 'Selected';
+$lang['select_d']   = 'Select none';
+$lang['select_a']   = 'Select all';
+$lang['global_sc']  = 'Set a global text shorctut [title &amp; value]. Such shortcuts appear in the list above without an owner and are accessible by anyone.';
+$lang['delete']     = 'Delete';
+$lang['misc']       = 'Miscellaneous';
+$lang['chars']      = 'chars';
+$lang['preview']    = 'Preview';
+$lang['submit']     = 'Submit';
+$lang['save']       = 'Save';
+$lang['notebook']   = 'Notes';
+$lang['reset']      = 'Reset';
+$lang['seconds']    = 'Seconds';
+$lang['minutes']    = 'Minutes';
+$lang['hours']      = 'Hours';
+$lang['days']       = 'Days';
+$lang['weeks']      = 'Weeks';
+$lang['months']     = 'Months';
+$lang['secs_ago']   = 'seconds ago...';
+$lang['mins_ago']   = 'minutes ago...';
+$lang['hrs_ago']    = 'hours ago...';
+$lang['days_ago']   = 'days ago...';
+$lang['presets']    = 'Presets';
+$lang['default']    = 'Default';
+$lang['defaults']   = 'Defaults';
+$lang['perform']    = 'Performance';
+$lang['database']   = 'Database';
+$lang['backup']     = 'Backup';
+$lang['ip2country'] = 'IP-2-Country';
+$lang['imprt_ip2c'] = 'Click here to import your current ip2c.txt into the database';
+$lang['confirm']    = 'Please confirm the operation!';
+$lang['restore']    = 'Restore';
+$lang['minimal']    = 'Minimal';
+$lang['top_users']  = 'Top chatters';
+$lang['now_chatt']  = 'Now chatting';
+$lang['logout']     = 'LogOut';
+$lang['redirect']   = 'Redirecting';
+$lang['reqst_ok']   = 'The requested operation has been completed successfully.';
+$lang['continue']   = 'Click here to continue!';
+$lang['overview']   = 'Overview';
+$lang['o_manual']   = 'Online Manual';
+$lang['def_emo']    = 'Default emoticons';
+$lang['emo_conm']   = 'Would you like to load default emoticons for this skin?';
+$lang['acpkey']     = 'ACP Key';
+$lang['fg_acpkey']  = 'Forgotten ACP key? Please refer to our'; /* online manual */
+$lang['cur_acpkey'] = '<b>Old ACP Key</b> <br /><i>(You cannot SAVE a new key if you do not know the current one)</i>';
+$lang['new_acpkey'] = '<b>New ACP key</b> <br /><i>(Use a mix of numbers and letters between 5 and 18 chars)</i>';
+$lang['ret_acpkey'] = 'Retype your new ACP key exactly as above';
+$lang['acp_rst0']   = 'Reset ACP Key';
+$lang['acp_rst1']   = 'Click <b>RESET ACP KEY</b> to reset your ACP key';
+$lang['acp_rst2']   = 'Now your ACP key is: ';
+$lang['acp_fld']    = 'Wrong ACP key. You can perform one login attempt per minute. In one minute you will be redirected to the login screen.';
+$lang['bkp_skin']   = 'Backup current skin directory';
+$lang['dnd_bkp']    = 'Download backup';
+$lang['bkp_sett']   = 'Backup settings';
+$lang['rst_sett']   = 'Restore settings';
+$lang['bkp_ok']     = 'Click on the link below to backup your skin directory in a single ZIP file. Once the backup is done, you will see another link to download the ZIP file onto your PC.';
+$lang['bkp_wrong']  = 'In order to backup your current skin directory in a single ZIP file, the extension PHP_ZIP must be enabled and the file <i>SKIN_DIR/backup_skin.zip</i> must be set writeable. Note that you can always backup your skin through FTP instead.';
+$lang['bkp_stds']   = 'To backup your current settings click on the link below. You will get a download prompt to save a single .bak file onto your computer. To restore settings upload this file into the main BlaB!IM directory and you will see a RESTORE link here.';
+$lang['rst_conf']   = 'You are about to restore your settings from a backup. This will also restore a previous ACP key. Continue?';
+$lang['d_options']  = '(<i>This is default - users are allowed to select language, timezone etc on their own.</i>)';
+$lang['d_timezone'] = 'Default timezone. (<i>GMT = Greenwich Mean Time</i>)';
+$lang['d_timeform'] = 'Default time format.';
+$lang['d_language'] = 'Default language.';
+$lang['d_status']   = 'Default status. Obviously the default is online. In case you want users not to be able to see each other set <b>invisible</b>.';
+$lang['d_veffects'] = 'Visual effects are enabled.';
+$lang['d_sound1']   = 'Sound notification (new chat).';
+$lang['d_sound2']   = 'Sound notification (new message).';
+$lang['a_language'] = 'ACP language. (<i>This option is not \'per user\' - it affects all the users that are allowed to enter ACP.</i>)';
+$lang['a_css']      = 'ACP font &amp; colors. (<i>This option is not \'per user\' - it affects all the users that are allowed to enter ACP.</i>)';
+$lang['edit_tss']   = 'Editing templates, smilies and CSS from ACP is allowed. Template files, <i>smilies_X.inc</i> and <i>style_X.css</i> file must be CHMODed to 777.';
+$lang['n_entries']  = 'Entries per page when browsing Stats &amp; Log.';
+$lang['guest_allo'] = 'Guests access is enabled. You can set what permissions guests are given under GROUPS &amp; PERMISSIONS &raquo; DEFAULT GROUP.';
+$lang['guest_pref'] = 'Guest prefix. The prefix is added at the beginning of guest names to make difference between guests and normal users.';
+$lang['guest_suff'] = 'Guest suffix. The suffix is added at the end of guest names to make difference between guests and normal users.';
+$lang['chat_updt']  = 'Ajax requests per user when chatting every X seconds. With many users chatting simultaneously select 10 seconds at least.';
+$lang['main_updt']  = 'Ajax requests per user from the BlaB!IM bar every X seconds. (<i>Note the timeout factor below.</i>)';
+$lang['main_ofct']  = 'Timeout factor. A user is considered as offline when not sending the expected request X times.';
+$lang['m_history']  = 'Keep messages in database for the selected period. Older messages will be deleted.';
+$lang['f_history']  = 'Keep files &amp; shortcuts for the selected period. Older files &amp; shortcuts will be deleted.';
+$lang['m_users']    = 'Keep log of users visiting your site for the selected period. Older entries will be deleted.';
+$lang['latest_msg'] = 'When loading chat sessions display XX minutes history (MAX=120 minutes).';
+$lang['ajax_delay'] = 'Delay the AJAX request XXX ms when loading a page. This fixes an MSIE bug. Keep it as low as possible (10-900).';
+$lang['m_interval'] = 'Minimum interval between posts [session] (500-9000ms)';
+$lang['b_interval'] = 'Minimum interval between posts [chatbox] (500-9000ms)';
+$lang['post_length']= 'Max length of posts [128-2048]';
+$lang['file_size']  = 'Max size of uploaded files in kilobytes [10-9999].';
+$lang['del_gbudd']  = 'Reset guest names and delete buddies, files &amp; shortcuts set by guest users. This does not affect anything set by registered users.';
+$lang['opt_tbl']    = 'Optimize database. Note that this may take several seconds.';
+$lang['hdr_rdr']    = 'Redirect using header(). This might not work properly on Windows based servers and in this case set NO.';
+$lang['html_title'] = 'HTML title which is visible when UCP is opened in a popup window. You can leave it blank or set <i>Instant Messener</i> or something similar.';
+$lang['gender_all'] = 'Gender of the users. Turn this to NO if your system doesn\'t support gender in the profiles or if you want not to allow filtering by gender.';
+$lang['nosess_err'] = 'Display error message if the browser of the user doesn\'t accept session cookies.';
+$lang['popup_ucp']  = 'Open User Control Panel (UCP) in a popup window.';
+$lang['ucp_effect'] = 'Resize UCP gradually when not in a popup.';
+$lang['prune_db']   = 'Save and then manually run <b>cron.php</b> with the button. The settings above will be applied.';
+$lang['ip2c_all']   = 'Country recognition by IP and showing country flags in the online list. Set this to NO to save SQL queries.';
+$lang['ucp_width']  = 'UCP width in pixels [480-900]. Default: 550';
+$lang['ucp_height'] = 'UCP height in pixels [330-500]. Default: 360';
+$lang['lf0_desc']   = 'In this section you can adjust the look of the BlaB!IM bar that appears on your pages, the look of the User CP and chat windows. Most settings are critical and it is recommended to play carefully and step-by-step. Test as much as possible with different browsers. For information in detail on what you can do and what you are not supposed to touch at all, please refer to our online manual.';
+$lang['lf1_desc']   = 'Here you can manage the look of the embedded BlaB!IM bar. You can edit the CSS manually or simply select a preset. Keep in mind that the DIV element that contains BlaB!IM bar inherits styles from the place where it is situated in your HTML document.  *If you choose to use a \'fixed\' bar, note that this is not supported by MSIE6 and also it might cause problems when using custom JS code!';
+
+$lang['lf2_desc']   = 'Here you can manage what elements to include in the embedded BlaB!IM bar. You can also include any sort of HTML. The result can be seen on the BAR STYLE page. Recognized elements are:<br /> <br /> 
+<table>
+<tr><td class="tdr" style="color:#a00">{WELCOME}       </td><td>- \'Welcome\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{USER}          </td><td>- Username of the corresponding user.</td></tr>
+<tr><td class="tdr" style="color:#a00">{ONLINE_NUM}    </td><td>- Number of the online users.</td></tr>
+<tr><td class="tdr" style="color:#a00">{ONLINE_BOOL}   </td><td>- Returns  {ONLINE_LANG} if at least one visitor is online.</td></tr>
+<tr><td class="tdr" style="color:#a00">{ONLINE_LANG}   </td><td>- \'Online\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{ONLINE_LINK}   </td><td>- Link to open a list of the online users.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SETTINGS_LANG} </td><td>- \'Settings\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SETTINGS_LINK} </td><td>- Link to open the <i>settings</i> page.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATBOX_LANG}  </td><td>- \'Chatbox\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATBOX_LINK}  </td><td>- Link to open the <i>chatbox</i> page. (if available)</td></tr>
+<tr><td class="tdr" style="color:#a00">{HELP_LANG}     </td><td>- \'Help\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{HELP_LINK}     </td><td>- Link to open the <i>help</i> page.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CLOSE_LINK}    </td><td>- Closing tag when using {<span style="color:#a00">XXXX</span>_LINK}.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SKIN_DIR}      </td><td>- Active skin directory path from your main site.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C1_LANG}       </td><td>- Custom entry #1 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C2_LANG}       </td><td>- Custom entry #2 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C3_LANG}       </td><td>- Custom entry #3 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C4_LANG}       </td><td>- Custom entry #4 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C5_LANG}       </td><td>- Custom entry #5 from the selected language file.</td></tr>
+
+</table>';
+
+$lang['lf3_desc']   = 'Elements to include in the embedded BlaB!IM bar when a chat request occurs. Recognized elements are:<br /> <br /> 
+<table>
+<tr><td class="tdr" style="color:#a00">{WELCOME}       </td><td>- \'Welcome\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{USER}          </td><td>- Username of the corresponding user.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATS_NUM}     </td><td>- Number of chat requests.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATS_LANG}    </td><td>- \'Chat requests\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATS_LINK}    </td><td>- Link to open the list of chat requests.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SETTINGS_LANG} </td><td>- \'Settings\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SETTINGS_LINK} </td><td>- Link to open the <i>settings</i> page.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATBOX_LANG}  </td><td>- \'Chatbox\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CHATBOX_LINK}  </td><td>- Link to open the <i>chatbox</i> page. (if available)</td></tr>
+<tr><td class="tdr" style="color:#a00">{HELP_LANG}     </td><td>- \'Help\' entry from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{HELP_LINK}     </td><td>- Link to open the <i>help</i> page.</td></tr>
+<tr><td class="tdr" style="color:#a00">{CLOSE_LINK}    </td><td>- Closing tag when using {CHATS_LINK}.</td></tr>
+<tr><td class="tdr" style="color:#a00">{SKIN_DIR}      </td><td>- Active skin directory path from your main site.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C1_LANG}       </td><td>- Custom entry #1 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C2_LANG}       </td><td>- Custom entry #2 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C3_LANG}       </td><td>- Custom entry #3 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C4_LANG}       </td><td>- Custom entry #4 from the selected language file.</td></tr>
+<tr><td class="tdr" style="color:#a00">{C5_LANG}       </td><td>- Custom entry #5 from the selected language file.</td></tr>
+</table>';
+
+$lang['lf4_desc']   = 'You can put in the box below some JavaScript code in case you have other ideas how to display the embedded BlaB!IM bar. The ID of the DIV element, you are going to work with, is <b>blabimbar</b>: <span style="color:#a00">document.getElementById(\'blabimbar\')</span> ';
+$lang['lf5_desc']   = 'By default you cannot edit emoticons, global CSS and template files from here since it is dangerous and these files are not editable on Linux/Unix servers. It is strongly recommended to do this locally by using a text editor that offers you much more features such as unlimited undo/redo and syntax highlighting. <br /><br /> If you are absolutely certain that you need to edit files from here - CHMOD all template files, <b>style_X.css</b> and <b>smilies_X.inc</b> to 777 and then turn editing on from SETTINGS. If the file name below is <b style="color:red">red</b> you cannot edit the file, if <b style="color:green">green</b> - the file is editable.';
+$lang['lf6_desc']   = 'To add a new emoticon or alias there must be a corresponding image file uploaded under the folder <i>SKIN_DIR/smilies</i>. Aliases do not appear in the smilie box but their codes will be replaced with images if posted. To remove a smilie or alias simply set a smilie code shorter than 2 chars. Note that this does not remove the image file from the server.';
+$lang['lf7_desc']   = 'Some options to change the size and the look of the User Control Panel (UCP). Please note that in some situations improperly set width and height might take UCP outside the visible area.';
+
+$lang['st0_desc']   = 'In this section you can manage the configuration settings of BlaB!IM, optimize and delete old entries from the database, change your ACP key, backup and restore the most important parts of your system. For more information please refer to our online manual.';
+$lang['st1_desc']   = 'To prune automatically old entries from the database using Cronjobs [can be found in the control panel of your hosting account] run the file <b>cron.php</b> once per hour/day.';
+$lang['st2_desc']   = 'ACP key is a secret combination of letters, numbers and symbols that grants you access to the Admin CP of BlaB! IM. The ACP key is case-sensitive. Using a mix of numbers, uppercase and lowercase letters is strongly recomended! You can always change your ACP Key from here.';
+$lang['st3_desc']   = 'In order to see proper countries and flags, a file called <i>ip2c.txt</i> [in the main BlaB!IM directory] must be imported in the database! A fresh copy of <i>ip2c.txt</i>  can be found at our support center. If your current <i>ip2c.txt</i>  is outdated or you still have the one from the distribution package, you need to upload a fresh copy of <i>ip2c.txt</i> .';
+
+$lang['gr1_desc']   ='To edit group permissions select a group from the list below. Add new groups with the button ADD GROUP. You can easily link user groups from your main site to BlaB! IM groups when editing permissions. Users that are not members of any group go to the default group (D) which cannot be removed or linked. To delete currently linked groups and link all the groups from your main site click on DELETE AND LINK GROUPS. Permissions:
+<br /><table style="margin:10px">
+<tr><td class="tdr" style="color:#a00">A</td><td>- Members of this group are allowed to load BlaB! IM.</td></tr>
+<tr><td class="tdr" style="color:#a00">B</td><td>- Members of this group are allowed to change status: Online, Away, DND etc</td></tr>
+<tr><td class="tdr" style="color:#a00">C</td><td>- Members of this group are allowed to switch to invisible mode.</td></tr>
+<tr><td class="tdr" style="color:#a00">D</td><td>- Members of this group are allowed to see invisible users.</td></tr>
+<tr><td class="tdr" style="color:#a00">E</td><td>- Members of this group are allowed to request chats.</td></tr>
+<tr><td class="tdr" style="color:#a00">F</td><td>- Members of this group are allowed to request chat from users in DND mode.</td></tr>
+<tr><td class="tdr" style="color:#a00">G</td><td>- Members of this group are allowed to upload files.</td></tr>
+<tr><td class="tdr" style="color:#a00">H</td><td>- Members of this group are allowed to load chatbox.</td></tr>
+<tr><td class="tdr" style="color:#a00">I</td><td>- Members of this group are allowed to chat in chatbox.</td></tr>
+<tr><td class="tdr" style="color:#a00">J</td><td>- Members of this group are allowed to add buddies.</td></tr>
+<tr><td class="tdr" style="color:#a00">K</td><td>- Members of this group are allowed to disable IM bar.</td></tr>
+</table>';
+
+$lang['gr_acpkey']  = 'Put users that are logged onto ACP with the ACP key into:';
+$lang['gr_name']    = 'Group name.';
+$lang['gr_link']    = 'Link to this BlaB!IM group a group from your main site.<br />Note that only groups that are not yet linked appear in the list.';
+$lang['gr_pa']      = 'Members of this group are allowed to load BlaB! IM.';
+$lang['gr_pb']      = 'Members of this group are allowed to change status: Online, Away, DND etc';
+$lang['gr_pc']      = 'Members of this group are allowed to switch to invisible mode.';
+$lang['gr_pd']      = 'Members of this group are allowed to see invisible users.';
+$lang['gr_pe']      = 'Members of this group are allowed to request chats.';
+$lang['gr_pf']      = 'Members of this group are allowed to request chat from users in DND mode.';
+$lang['gr_pg']      = 'Members of this group are allowed to upload files.';
+$lang['gr_ph']      = 'Members of this group are allowed to load chatbox.';
+$lang['gr_pi']      = 'Members of this group are allowed to chat in chatbox.';
+$lang['gr_pj']      = 'Members of this group are allowed to add buddies.';
+$lang['gr_pk']      = 'Members of this group are allowed to disable IM bar.';
+
+$lang['sl1_desc']   = 'We have %ONLINE_NUM% online users and %CHATTING_NUM% users that are chatting right now. There are %CREQS_NUM% chat requests and %POSTS_NUM% messages submitted by %USERS_NUM% users since %SINCE_NUM%. To automatically prune old entries from the database and optimize db tables, go to <b>SETTINGS &raquo; DATABASE</b>.';
+$lang['sl2_desc']   = 'The table contains a list of all active chatters [guests or registered] ordered by the number of messages they sent. To see their sent messages or buddies click on the links MSG / BUD. The UID in the last column is a unique ID of each user.';
+$lang['sl3_desc']   = 'This table contains a list of all chat requests and their status ordered by date &amp; time. You can see messages from a particular chat session with the link SESSION.';
+$lang['sl4_desc']   = 'To see messages from a particular chat session go to CHAT REQUESTS or NOW CHATTING and click on SESSION. To see chatbox only - click on CHATBOX. Note that the name of the user, a message is addressed to, is not available - you have their UID only.';
+$lang['sl5_desc']   = 'A list of buddies. Since you do not see the name of the user who set the buddy, to display buddies of a particular user go to TOP CHATTERS or USERS and click on BUD from the list.';
+$lang['sl6_desc']   = 'Review and delete files &amp; shortcuts. Please note that you can automatically delete files &amp; shortcuts when pruning old entries from the database (SETTINGS  <b>&raquo;</b> DATABASE).';
+$lang['sl7_desc']   = 'In this table you have a list of users that are now chatting ordered by username. To see messages from a particular chat session click on SESSION.';
+$lang['sl8_desc']   = 'Below you have a list of users that are online (all) ordered by name (time). To see their messages or buddies click on the links MSG / BUD. To see messages from a particular chat session go to CHAT REQUESTS or NOW CHATTING and click on SESSION.';
+
+?>

@@ -1,0 +1,5 @@
+<body style="text-align:center">
+<div id="rdr" class="rdr" style="display:none"><?php print $message;?><br />
+<b><a href="info.php?why=link" onclick="window.location=url;return false"><?php print $lang['continue'];?></a></b></div>
+<script type="text/javascript">opa_st(document.getElementById('rdr'),1);url='<?php print $url;?>';setTimeout('window.location=url',<?php print $wait;?>*1000);</script>
+</body></html>

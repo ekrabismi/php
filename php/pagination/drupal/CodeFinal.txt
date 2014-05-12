@@ -1,0 +1,66 @@
+<?php
+print "<a href=\"?q=admin/settings/pagination\">Input data Now </a><br><br>"; 
+$numrow=0;
+$limit=3;
+$lower=0;
+$upper=-1;
+$pages= 0;
+
+$result = db_query("Select * from student");
+  while ($item = db_fetch_object($result)) {
+  $numrow++;
+  }
+
+$pages= ceil($numrow/$limit);
+
+print "Number of rows = $numrow<br>";
+print "Rows per page (limit) = $limit<br>";
+print "Pages = $pages<br>";
+
+
+//print "<br>Lower=".$_REQUEST['lower']  . "Upper=".$_REQUEST['upper']."<br>";
+$result = db_query("Select * from student");
+ $rows = array();
+  while ($item = db_fetch_object($result)) {
+    $rows[] = $item;
+  }
+
+//print_r($rows);
+if($_REQUEST['upper'])
+{
+ $lower=$_REQUEST['lower'];
+ $upper=$_REQUEST['upper']; 
+print "<table><tr><td>Name</td> <td> Roll </td>  <td> Address</td></tr><br>";
+for($i=$lower; $i<=$upper;$i++) 
+ { 
+   print "<tr><td>" . $rows[$i]->name . "</td><td>" . $rows[$i]->roll . "</td><td>" . $rows[$i]->address . "</td></tr><br>";  
+ }
+print "</table>";
+}
+
+else
+{
+ $lower=0;
+ $upper=$limit-1; 
+print "<table><tr><td>Name</td> <td> Roll </td>  <td> Address</td></tr><br>";
+for($i=$lower; $i<=$upper;$i++) 
+ { 
+   print "<tr><td>" . $rows[$i]->name . "</td><td>" . $rows[$i]->roll . "</td><td>" . $rows[$i]->address . "</td></tr><br>";  
+ }
+print "</table>";
+}
+
+$lower=0;
+$upper=-1;
+print "<div align='right'>";
+for($i=1;$i<=$pages; $i++)
+{
+$lower = $upper+1;
+$upper = $lower + $limit - 1; 
+
+print "<a href=\"?q=node/1&lower=$lower&upper=$upper\">";
+print "$i</a> , ";
+//print "$i [$lower - $upper ] , ";
+}
+print "</div>";
+?>

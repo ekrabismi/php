@@ -1,0 +1,18 @@
+<tr class="c_tr<?php print $tr;?>">
+
+<td class="c_ico"><img src="<?php print $skin_dir;?>/images/inv_<?php print $drct1;?>.png" alt="" /></td>
+<td class="c_oth"><span class="c_drc"><?php print $drct2;?>: </span>
+<b><?php print $name;?></b></td>
+<td class="c_cmm">
+
+<?php if($row['status']==0 && $bim_id!=$row['usr_id']){?>
+<a class="c_lnk" href="info.php?why=link" onclick="process_chat(<?php print $row['usr_id'];?>,2,0);return false"><?php print $lang['accept'];?></a>
+<b> &middot; </b>
+<a class="c_lnk" href="info.php?why=link" onclick="process_chat(<?php print $row['usr_id'];?>,4,0);return false"><?php print $lang['skip'];?></a>
+<?php }else{?>
+<a href="info.php?why=link" onclick="process_chat(<?php print $uid;?>,3,0);return false"><?php print $lang['chat_open'];?></a>
+<?php }?></td>
+
+<td class="c_ico"><img src="<?php print $skin_dir;?>/images/inv_<?php print $row['status'];?>.png" alt="" /></td>
+<td class="c_tmm"><?php print $show_time;?></td>
+</tr>

@@ -1,0 +1,14 @@
+<div id="bnav" class="navbar" onclick="opa_st(this,0)"><table cellspacing="1" cellpadding="5" class="nav_tbl">
+
+<tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="window.location='ucp_users.php';return false"><img src="<?php print $skin_dir;?>/images/menu_users.png" alt="" /></a></td><td class="topbar1"><a id="tb1" href="info.php?wsssp=link" onclick="window.location='ucp_users.php';return false"><?php print $lang['users'];?></a></td></tr>
+<tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="window.location='ucp_chats.php';return false"><img src="<?php print $skin_dir;?>/images/menu_chats.png" alt="" /></a></td><td class="topbar1"><a id="tb2" href="info.php?wsssp=link" onclick="window.location='ucp_chats.php';return false"><?php print $lang['chatr_s'];?></a></td></tr>
+<tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="window.location='ucp_settings.php';return false"><img src="<?php print $skin_dir;?>/images/menu_settings.png" alt="" /></a></td><td class="topbar1"><a id="tb4" href="info.php?wsssp=link" onclick="window.location='ucp_settings.php';return false"><?php print $lang['settings'];?></a></td></tr>
+<tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="window.location='ucp_help.php';return false"><img src="<?php print $skin_dir;?>/images/menu_help.png" alt="" /></a></td><td class="topbar1"><a id="tb5" href="info.php?wsssp=link" onclick="window.location='ucp_help.php';return false"><?php print $lang['help'];?></a></td></tr>
+<tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="ucp_close(1);return false"><img src="<?php print $skin_dir;?>/images/menu_close.png" alt="" /></a></td><td class="topbar1"><a href="info.php?wsssp=link" onclick="ucp_close(1);return false"><?php print $lang['close'];?></a></td></tr>
+</table>
+</div>
+
+<div id="status_dv" class="status_div" onclick="opa_st(this,0)"><table cellspacing="1" cellpadding="5" class="nav_tbl">
+<?php if($status!=0){?><tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="set_status(0);return false"><img class="status_img" src="<?php print $skin_dir;?>/images/status0.png" alt="" /></a></td><td class="topbar1"><a href="info.php?wsssp=link" onclick="set_status(0);return false"><?php print $lang['available'];?></a></td></tr><?php }?>
+<?php if($status!=1){?><tr class="box_tr1"><td><a href="info.php?wsssp=link" onclick="set_status(1);return false"><img class="status_img" src="<?php print $skin_dir;?>/images/status1.png" alt="" /></a></td><td class="topbar1"><a href="info.php?wsssp=link" onclick="set_status(1);return false"><?php print $lang['away'];?></a></td></tr><?php }?>
+</table></div>

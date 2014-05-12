@@ -1,0 +1,93 @@
+<form id="f1" action="admin.php?q=database" method="post" style="margin:0px;padding:0px">
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=settings"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=options"><?php print $lang['settings'];?></a> &middot;<br />
+<a href="admin.php?q=database"><?php print $lang['database'];?></a> &middot;<br />
+<a href="admin.php?q=acpkey"><?php print $lang['acpkey'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+
+<div class="title"><?php print $lang['database'];?></div>
+<p style="text-align:justify"><?php print $lang['st1_desc'];?></p>
+<div class="hr"></div>
+
+<div class="title">&raquo; cron.php</div>
+<table cellspacing="1" cellpadding="8" class="tbl">
+<tr class="tr1">
+<td class="tdr"><select style="width:120px" name="mssg_history">
+<?php if($settings['mssg_history']==2){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="2"<?php print $sel;?>>2 <?php print $lang['hours'];?></option>
+<?php if($settings['mssg_history']==6){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="6"<?php print $sel;?>>6 <?php print $lang['hours'];?></option>
+<?php if($settings['mssg_history']==24){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="24"<?php print $sel;?>>24 <?php print $lang['hours'];?></option>
+</select></td><td><?php print $lang['m_history'];?></td>
+</tr>
+
+<tr class="tr2">
+<td class="tdr"><select style="width:120px" name="user_history">
+<?php if($settings['user_history']==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>>60 <?php print $lang['minutes'];?></option>
+<?php if($settings['user_history']==2){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="2"<?php print $sel;?>>2 <?php print $lang['hours'];?></option>
+<?php if($settings['user_history']==6){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="6"<?php print $sel;?>>6 <?php print $lang['hours'];?></option>
+<?php if($settings['user_history']==24){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="24"<?php print $sel;?>>24 <?php print $lang['hours'];?></option>
+</select></td><td><?php print $lang['m_users'];?></td>
+</tr>
+
+<tr class="tr2">
+<td class="tdr"><select style="width:120px" name="del_gbuddies">
+<?php if($settings['del_gbuddies']==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>><?php print $lang['yes'];?></option>
+<?php if($settings['del_gbuddies']==0){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="0"<?php print $sel;?>><?php print $lang['no'];?></option>
+</select></td>
+<td><?php print $lang['del_gbudd'];?></td>
+</tr>
+
+<tr class="tr1">
+<td class="tdr"><select style="width:120px" name="optimize_tbl">
+<?php if($settings['optimize_tbl']==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>><?php print $lang['yes'];?></option>
+<?php if($settings['optimize_tbl']==0){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="0"<?php print $sel;?>><?php print $lang['no'];?></option>
+</select></td>
+<td><?php print $lang['opt_tbl'];?></td>
+</tr>
+
+</table>
+
+<p style="margin:0px;padding:0px">&nbsp;</p>
+<p>
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.f1.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.f1.reset()" />
+</p>
+
+<script type="text/javascript">
+function http_obj(){
+if(typeof window.external=='object' && typeof document.all=='object'){
+r=new ActiveXObject("Microsoft.XMLHTTP")}
+else{r=new XMLHttpRequest()}return r}
+
+function cron_start(){
+htto=http_obj();
+htto.open('post','cron.php');
+htto.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+htto.onreadystatechange=cron_print;htto.send(0);}
+
+function cron_print(){
+if(htto.readyState==4){
+response=htto.responseText.toString();
+document.getElementById('ajcron').innerHTML=response;
+}}
+</script>
+
+<div class="hr"></div>
+<?php print $lang['prune_db'];?> <br />&nbsp;<br />
+<input class="btn" style="float:left" type="button" value="&nbsp; CRON.PHP &nbsp;" onclick="cron_start();return false" />
+<div id="ajcron" style="float:right;text-align:right"></div>
+</td></tr></table>
+</form>
