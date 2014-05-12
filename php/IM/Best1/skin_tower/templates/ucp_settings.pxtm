@@ -1,0 +1,215 @@
+<body onload="set_ie6size()">
+<script type="text/javascript"><!--
+color_switch=0;
+
+function psound(a){a=parseInt(a);if(a>0){
+flcs=new Image();flcs.src='<?php print $skin_dir;?>/sounds/snd'+a+'.swf';
+flsh='<object data="'+flcs.src+'" type="application/x-shockwave-flash" width="1" height="1" style="visibility:hidden"><param name="movie" value="'+flcs.src+'" /><param name="menu" value="false" /><param name="quality" value="high" /></object>';
+document.getElementById('snd_tst').innerHTML=flsh;}}
+
+function show_colors(x){
+color_switch=x;
+document.getElementById('onltable').style.display='none';
+opa_st(document.getElementById('clrs'),1);}
+
+function pick_color(x){
+if(color_switch==1){
+document.forms.fms.mcolor.value=x;
+document.getElementById('mtext').style.color=x;}
+if(color_switch==2){
+document.forms.fms.ycolor.value=x;
+document.getElementById('ytext').style.color=x;}
+document.getElementById('clrs').style.display='none';
+opa_st(document.getElementById('onltable'),1);
+}
+
+function set_sound(b){psound(b)}
+//-->
+</script>
+<?php include $skin_dir.'/templates/ucp_header.pxtm';?>
+<form id="fms" action="ucp_settings.php" method="post">
+<div id="mda" class="midarea" style="background-image:none">
+
+<div id="onltable">
+
+<table class="o_tbl" cellspacing="1" cellpadding="7" style="margin-top:10px">
+
+<tr><td class="o_tdt" colspan="2"><b><?php print $lang['settings'];?></b></td></tr>
+
+
+<tr class="o_tr0">
+<td class="rgt"><?php print $lang['text_me'];?></td><td>
+<input type="hidden" name="mbold" value="<?php print $options[6];?>" />
+<input type="hidden" name="mcolor" value="<?php print $options[8];?>" />
+<div style="float:left;font-weight:bold"><a href="info.php?why=link" onclick="show_colors(1);return false"><?php print $lang['color'];?></a>
+<a href="info.php?why=link" onclick="if(document.forms.fms.mbold.value=='0'){document.getElementById('mtext').style.fontWeight='bold';document.forms.fms.mbold.value=1;}else{document.getElementById('mtext').style.fontWeight='normal';document.forms.fms.mbold.value=0;}return false"><?php print $lang['bold'];?></a></div>
+<div style="float:right<?php if($options[6]!=0){print ';font-weight:bold';} if(strlen($options[8])>0){print ';color:'.$options[8];}?>" id="mtext">(abc)</div>
+</td></tr>
+
+<tr class="o_tr1">
+<td class="rgt"><?php print $lang['text_ot'];?></td><td>
+<input type="hidden" name="ybold" value="<?php print $options[7];?>" />
+<input type="hidden" name="ycolor" value="<?php print $options[9];?>" />
+<div style="float:left;font-weight:bold"><a href="info.php?why=link" onclick="show_colors(2);return false"><?php print $lang['color'];?></a>
+<a href="info.php?why=link" onclick="if(document.forms.fms.ybold.value=='0'){document.getElementById('ytext').style.fontWeight='bold';document.forms.fms.ybold.value=1;}else{document.getElementById('ytext').style.fontWeight='normal';document.forms.fms.ybold.value=0;}return false"><?php print $lang['bold'];?></a></div>
+<div style="float:right<?php if($options[7]!=0){print ';font-weight:bold';} if(strlen($options[9])>0){print ';color:'.$options[9];}?>" id="ytext">(abc)</div>
+</td></tr>
+
+
+<tr class="o_tr0">
+<td class="rgt"><?php print $lang['language'];?></td><td><select class="ste" name="language">
+<?php
+include 'lang/languages.inc';
+
+for($i=0;$i<count($lang_files);$i++){
+$option_language=explode('.',$lang_files[$i]);$option_language=ucfirst($option_language[0]);
+if($options[0]==$i){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="'.$i.'"'.$sel.'>'.$option_language.'</option>';}
+?>
+</select></td></tr>
+
+<tr class="o_tr1">
+<td class="rgt"><?php print $lang['veffects'];?></td><td><select class="ste" name="veffects">
+<?php if($options[3]==0){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"><?php print $lang['yes'];?></option>
+<option value="0"<?php print $sel;?>><?php print $lang['no'];?></option>
+</select></td></tr>
+<tr class="o_tr0">
+<td class="rgt"><?php print $lang['timezone'];?></td><td><select class="ste" name="timezone">
+<?php 
+for($i=-12;$i<=13;$i++){if($i!=0){$gmt='';}else{$gmt=' GMT';}
+$show_time=gmdate('m-d H:i',time()+$i*3600);
+if($options[1]==$i){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="'.$i.'"'.$sel.'>'.$show_time.$gmt.'</option>';}
+?>
+</select></td></tr>
+
+<tr class="o_tr1">
+<td class="rgt"><?php print $lang['timeform'];?></td><td><select class="ste" name="timeform">
+<?php
+$show_time=gmdate('H:i:s',time()+$options[1]*3600);
+if($options[2]==0){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="0"'.$sel.'>'.$show_time.'</option>';
+
+$show_time=gmdate('Y-m-d H:i:s',time()+$options[1]*3600);
+if($options[2]==2){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="2"'.$sel.'>'.$show_time.'</option>';
+
+$show_time=gmdate('d.m.Y H:i:s',time()+$options[1]*3600);
+if($options[2]==3){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="3"'.$sel.'>'.$show_time.'</option>';
+
+$show_time=gmdate('m/d/Y h:i:s A',time()+$options[1]*3600);
+if($options[2]==4){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="4"'.$sel.'>'.$show_time.'</option>';
+
+$show_time=gmdate('h:i:s A',time()+$options[1]*3600);
+if($options[2]==1){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="1"'.$sel.'>'.$show_time.'</option>';
+
+$show_time='';
+if($options[2]==5){$sel=' selected="selected"';}else{$sel='';}
+print '<option value="5"'.$sel.'>'.$lang['none'].'</option>';?>
+</select></td>
+</tr>
+
+<tr class="o_tr0">
+<td class="rgt"><?php print $lang['alert'];?> (<b>A</b>) <a href="info.php?why=link" onclick="psound(document.forms.fms.snd_c.value);return false"><b>&raquo;</b></a></td><td>
+<select name="snd_c" class="ste" onchange="psound(this.value)">
+<?php if($options[4]==0){$selected=' selected="selected"';}else{$selected='';}?><option value="0" <?php print $selected;?>><?php print $lang['none'];?></option>
+<?php if($options[4]==1){$selected=' selected="selected"';}else{$selected='';}?><option value="1" <?php print $selected;?>>1</option>
+<?php if($options[4]==2){$selected=' selected="selected"';}else{$selected='';}?><option value="2" <?php print $selected;?>>2</option>
+<?php if($options[4]==3){$selected=' selected="selected"';}else{$selected='';}?><option value="3" <?php print $selected;?>>3</option>
+<?php if($options[4]==4){$selected=' selected="selected"';}else{$selected='';}?><option value="4" <?php print $selected;?>>4</option>
+<?php if($options[4]==5){$selected=' selected="selected"';}else{$selected='';}?><option value="5" <?php print $selected;?>>5</option>
+<?php if($options[4]==6){$selected=' selected="selected"';}else{$selected='';}?><option value="6" <?php print $selected;?>>6</option>
+<?php if($options[4]==7){$selected=' selected="selected"';}else{$selected='';}?><option value="7" <?php print $selected;?>>7</option>
+<?php if($options[4]==8){$selected=' selected="selected"';}else{$selected='';}?><option value="8" <?php print $selected;?>>8</option>
+<?php if($options[4]==9){$selected=' selected="selected"';}else{$selected='';}?><option value="9" <?php print $selected;?>>9</option>
+</select>
+</td></tr>
+
+<tr class="o_tr1">
+<td class="rgt"><?php print $lang['alert'];?> (<b>B</b>) <a href="info.php?why=link" onclick="psound(document.forms.fms.snd_m.value);return false"><b>&raquo;</b></a></td><td>
+<select name="snd_m" class="ste" onchange="psound(this.value)">
+<?php if($options[5]==0){$selected=' selected="selected"';}else{$selected='';}?><option value="0" <?php print $selected;?>><?php print $lang['none'];?></option>
+<?php if($options[5]==1){$selected=' selected="selected"';}else{$selected='';}?><option value="1" <?php print $selected;?>>1</option>
+<?php if($options[5]==2){$selected=' selected="selected"';}else{$selected='';}?><option value="2" <?php print $selected;?>>2</option>
+<?php if($options[5]==3){$selected=' selected="selected"';}else{$selected='';}?><option value="3" <?php print $selected;?>>3</option>
+<?php if($options[5]==4){$selected=' selected="selected"';}else{$selected='';}?><option value="4" <?php print $selected;?>>4</option>
+<?php if($options[5]==5){$selected=' selected="selected"';}else{$selected='';}?><option value="5" <?php print $selected;?>>5</option>
+<?php if($options[5]==6){$selected=' selected="selected"';}else{$selected='';}?><option value="6" <?php print $selected;?>>6</option>
+<?php if($options[5]==7){$selected=' selected="selected"';}else{$selected='';}?><option value="7" <?php print $selected;?>>7</option>
+<?php if($options[5]==8){$selected=' selected="selected"';}else{$selected='';}?><option value="8" <?php print $selected;?>>8</option>
+<?php if($options[5]==9){$selected=' selected="selected"';}else{$selected='';}?><option value="9" <?php print $selected;?>>9</option>
+</select>
+</td>
+</tr>
+
+
+<tr class="o_tr0">
+<td class="rgt"><?php print $lang['onchat'];?></td>
+<td><select class="ste" name="closeucp">
+<option value="0"><?php print $lang['leaveucp'];?></option>
+<?php if($options[10]==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>><?php print $lang['closeucp'];?></option>
+</select></td></tr>
+
+<tr class="o_tr1">
+<td colspan="2">
+<input class="btn" type="submit" value="&nbsp;&nbsp; <?php print $lang['save'];?> &nbsp;&nbsp;" />
+
+<?php if(!isset($_COOKIE['bmf_disable'])){?>
+<input class="btn" type="button" value="&nbsp;<?php print $lang['disable_bar'];?>&nbsp;" onclick="window.location='ucp_settings.php?disable_bar=1'" />
+<?php }else{?>
+<input class="btn" type="button" value="&nbsp;<?php print $lang['enable_bar'];?>&nbsp;" onclick="window.location='ucp_settings.php?disable_bar=0'" />
+<?php }?>
+
+</td></tr></table>
+
+
+
+</div>
+
+<div id="clrs" style="margin:5px;padding:5px;display:none">
+<script type="text/javascript">
+<!--
+colors=new Array('000000','000033','000066','000099','0000CC','0000FF','003300','003333','003366','003399','0033CC','0033FF','006600','006633','006666','006699','0066CC','0066FF','009900','009933','009966','009999','0099CC','0099FF','00CC00','00CC33','00CC66','00CC99','00CCCC','00CCFF','00FF00','00FF33','00FF66','00FF99','00FFCC','00FFFF','330000','330033','330066','330099','3300CC','3300FF','333300','333333','333366','333399','3333CC','3333FF','336600','336633','336666','336699','3366CC','3366FF','339900','339933','339966','339999','3399CC','3399FF','33CC00','33CC33','33CC66','33CC99','33CCCC','33CCFF','33FF00','33FF33','33FF66','33FF99','33FFCC','33FFFF','660000','660033','660066','660099','6600CC','6600FF','663300','663333','663366','663399','6633CC','6633FF','666600','666633','666666','666699','6666CC','6666FF','669900','669933','669966','669999','6699CC','6699FF','66CC00','66CC33','66CC66','66CC99','66CCCC','66CCFF','66FF00','66FF33','66FF66','66FF99','66FFCC','66FFFF','990000','990033','990066','990099','9900CC','9900FF','993300','993333','993366','993399','9933CC','9933FF','996600','996633','996666','996699','9966CC','9966FF','999900','999933','999966','999999','9999CC','9999FF','99CC00','99CC33','99CC66','99CC99','99CCCC','99CCFF','99FF00','99FF33','99FF66','99FF99','99FFCC','99FFFF','CC0000','CC0033','CC0066','CC0099','CC00CC','CC00FF','CC3300','CC3333','CC3366','CC3399','CC33CC','CC33FF','CC6600','CC6633','CC6666','CC6699','CC66CC','CC66FF','CC9900','CC9933','CC9966','CC9999','CC99CC','CC99FF','CCCC00','CCCC33','CCCC66','CCCC99','CCCCCC','CCCCFF','CCFF00','CCFF33','CCFF66','CCFF99','CCFFCC','CCFFFF','FF0000','FF0033','FF0066','FF0099','FF00CC','FF00FF','FF3300','FF3333','FF3366','FF3399','FF33CC','FF33FF','FF6600','FF6633','FF6666','FF6699','FF66CC','FF66FF','FF9900','FF9933','FF9966','FF9999','FF99CC','FF99FF','FFCC00','FFCC33','FFCC66','FFCC99','FFCCCC','FFCCFF','FFFF00','FFFF33','FFFF66','FFFF99','FFFFCC','FFFFFF');
+for(i=0;i<colors.length;i++){document.write('<img class="sti" src="'+skin_dir+'/images/trans.png" onclick="pick_color(this.style.backgroundColor)" style="background-color:#'+colors[i]+'" alt="" />')}
+
+//-->
+</script></div>
+
+</div>
+</form>
+
+
+
+<div class="botarea">
+<table cellspacing="0" style="width:100%">
+<tr><td class="botbar1">
+<?php print $lang['screen_name'];?>:
+<a href="info.php?why=link" onclick="window.location='ucp_name.php';return false">
+<b><?php $bname=htmrem($_SESSION['bmf_name']);print $bname;?></b></a>
+<b> &middot; </b>
+<a href="info.php?why=link" onclick="cc=confirm('<?php print $lang['confirm'];?>');if(cc){window.location='ucp_settings.php?del_cookie=1'};return false"><?php print $lang['del_cookie'];?></a> 
+</td><td class="botbar2">&nbsp; </td></tr></table></div>
+
+<?php include $skin_dir.'/templates/ucp_footer.pxtm';?>
+
+<script type="text/javascript">
+document.getElementById('tb4').style.color=ch_current;
+set_ie6size(); window.onresize=set_ie6size;
+flsh_cht=set_snd('<?php print $skin_dir.'/sounds/snd'. $options[4];?>.swf');
+
+tbl_print=0; tbl_add=0; ajx_sett='0|0|0|0';
+ajx_updt=<?php print $settings['main_refresh'];?>;
+
+setTimeout('onlist_recev()',<?php print $settings['ajax_delay'];?>*msie);
+setInterval('onlist_recev()',ajx_updt*1000);
+opa_st(document.getElementById('onltable'),1);
+
+</script>
+<div id="snd_tst"></div>
+
+</body></html>

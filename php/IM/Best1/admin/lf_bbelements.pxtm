@@ -1,0 +1,65 @@
+<script type="text/javascript"><!-- 
+
+function pset(a){
+a=parseInt(a);x="\r\n";
+switch(a){
+case 0: 
+b='<div style="padding:5px;padding-top:1px;background-color:#eee">{WELCOME} {USER}! &nbsp; '+x+x+'<img src="{SKIN_DIR}/images/bar_users.png" alt="" style="position:relative;top:2px" />'+x+'{ONLINE_LINK}{ONLINE_LANG}: {ONLINE_NUM}{CLOSE_LINK}'+x+'|'+x+'<img src="{SKIN_DIR}/images/bar_settings.png" alt="" style="position:relative;top:2px" />'+x+'{SETTINGS_LINK}{SETTINGS_LANG}{CLOSE_LINK}'+x+'|'+x+'<img src="{SKIN_DIR}/images/bar_help.png" alt="" style="position:relative;top:2px" />'+x+'{HELP_LINK}{HELP_LANG}{CLOSE_LINK}'+x+'</div>';
+c='<div style="padding:5px;padding-top:1px;background-color:#eee">{WELCOME} {USER}! &nbsp; '+x+x+'<img src="{SKIN_DIR}/images/bar_chats.png" alt="" style="position:relative;top:4px" />'+x+'{CHATS_LINK}{CHATS_LANG}: {CHATS_NUM}{CLOSE_LINK}'+x+'|'+x+'<img src="{SKIN_DIR}/images/bar_settings.png" alt="" style="position:relative;top:2px" />'+x+'{SETTINGS_LINK}{SETTINGS_LANG}{CLOSE_LINK}'+x+'|'+x+'<img src="{SKIN_DIR}/images/bar_help.png" alt="" style="position:relative;top:2px" />'+x+'{HELP_LINK}{HELP_LANG}{CLOSE_LINK}'+x+'</div>';
+break;case 1:
+b='<div style="background-color:#03557E;color:#fff;padding:5px">Instant Messenger</div>'+x+'<div style="padding:5px">{WELCOME} {USER}&nbsp;&nbsp;'+x+x+'{ONLINE_LINK}<input style="color:#000;background-color:#ddd;padding:3px;font-weight:bold;border:1px solid #fff" type="button" value="{ONLINE_LANG}: {ONLINE_NUM}" />{CLOSE_LINK}'+x+x+'{SETTINGS_LINK}<input style="color:#000;background-color:#ddd;padding:3px;font-weight:bold;border:1px solid #fff" type="button" value="{SETTINGS_LANG}" />{CLOSE_LINK}</div>';
+c='<div style="background-color:#a00;color:#fff;padding:5px">Instant Messenger</div>'+x+'<div style="padding:5px">{WELCOME} {USER}&nbsp;&nbsp;'+x+x+'{CHATS_LINK}<input style="color:#000;background-color:#ddd;padding:3px;font-weight:bold;border:1px solid #fff" type="button" value="{CHATS_LANG}: {CHATS_NUM}" />{CLOSE_LINK}</div>';
+
+break;
+default:b='';c='';break;}
+
+document.getElementById('bar_elements').value=b;
+document.getElementById('bar_chatreqt').value=c;
+
+}
+
+// --></script>
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div id="nb2" style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=looknfeel"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=bbstyle"><?php print $lang['bar'].' '.$lang['style'];?></a> &middot;<br />
+<a href="admin.php?q=bbelements"><?php print $lang['bar'].' '.$lang['elements'];?></a> &middot;<br />
+<a href="admin.php?q=ucp">UCP <?php print $lang['settings'];?></a> &middot;<br />
+
+</div></td><td valign="top" class="content">
+<div class="navbar2" style="padding:3px;float:right;border:1px solid #C2CFDF">
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='none';return false">&laquo;</a>
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='block';return false">&raquo;</a>
+</div>
+<form id="f1" action="admin.php?q=bbelements" method="post" style="margin:0px;padding:0px">
+
+<p class="title">BlaB!IM <?php print $lang['bar'].' '.$lang['elements'];?></p>
+<div style="text-align:justify"><?php print $lang['lf2_desc'];?></div>
+
+<div class="hr"></div>
+
+<div style="float:right">
+<select onchange="pset(this.value);this.value='x'">
+<option value="x"><?php print $lang['presets'];?></option>
+<option value="0">FB Style</option>
+<option value="1">Buttons</option>
+</select></div>
+<div style="clear:both"></div>
+
+<?php $bar_elements=htmrem($settings['bar_elements']); $bar_chatreqt=htmrem($settings['bar_chatreqt']);?>
+<p><textarea id="bar_elements" name="bar_elements" style="width:100%;height:170px;overflow:auto" cols="10" rows="5"><?php print $bar_elements;?></textarea></p>
+
+<div class="hr"></div>
+<div style="text-align:justify"><?php print $lang['lf3_desc'];?></div>
+<div class="hr"></div>
+
+<p><textarea id="bar_chatreqt" name="bar_chatreqt" style="width:100%;height:170px;overflow:auto" cols="10" rows="5"><?php print $bar_chatreqt;?></textarea></p>
+
+<p>
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.f1.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.f1.reset()" />
+</p>
+
+</form>
+</td></tr></table>

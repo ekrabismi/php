@@ -1,0 +1,19 @@
+<body>
+
+<form action="admin.php" method="post" onsubmit="if(5>this.acp_key.value.length){this.acp_key.focus();return false}">
+<div style="text-align:center">
+<div class="mainbox" style="margin-top:150px;text-align:center;padding:20px">
+
+<?php if($wrong_acp>60){?>
+<?php print $lang['acpkey'];?>:
+<input type="password" name="acp_key" style="width:120px" />
+<input type="submit" class="btn" value=" <?php print $lang['submit'];?> " />
+<br /><br /><?php print $lang['fg_acpkey'];?> <span class="title"><a href="info.php?why=link" onclick="window.location='http://hot-things.net/cs/articles.php?cid=13';return false"><?php print $lang['o_manual'];?></a></span>
+<?php }else{
+print $lang['acp_fld'];
+print '<script type="text/javascript">url=\'admin.php\';setTimeout(\'window.location=url\',65*1000);</script>';
+}?>
+
+</div></div>
+</form>
+</body></html>

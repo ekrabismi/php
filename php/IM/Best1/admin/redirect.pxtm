@@ -1,0 +1,10 @@
+<body><script type="text/javascript">
+url='<?php print $url;?>';setTimeout('window.location=url',<?php print $wait;?>*1000);</script>
+
+<div style="text-align:center">
+<div class="mainbox" style="margin-top:150px;text-align:center;padding:20px">
+<?php print $lang['reqst_ok'];?><br />&nbsp;<br />
+<b class="title"><a href="info.php?why=link" onclick="window.location=url;return false"><?php print $lang['continue'];?></a></b>
+</div></div>
+
+</body></html>

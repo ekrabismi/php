@@ -1,0 +1,4 @@
+<table class="o_tbl" cellspacing="1" cellpadding="5">
+<tr><td class="o_tdt" colspan="<?php print $colspan;?>">
+<div style="float:right"><?php print $p_from.'-'.$p_to.' /'.$total;?></div>
+<b><?php print $title;?></b></td></tr>

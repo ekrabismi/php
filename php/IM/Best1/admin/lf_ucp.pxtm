@@ -1,0 +1,58 @@
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div id="nb2" style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=looknfeel"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=bbstyle"><?php print $lang['bar'].' '.$lang['style'];?></a> &middot;<br />
+<a href="admin.php?q=bbelements"><?php print $lang['bar'].' '.$lang['elements'];?></a> &middot;<br />
+<a href="admin.php?q=ucp">UCP <?php print $lang['settings'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+<div class="navbar2" style="padding:3px;float:right;border:1px solid #C2CFDF">
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='none';return false">&laquo;</a>
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='block';return false">&raquo;</a>
+</div>
+<form id="f1" action="admin.php?q=ucp" method="post" style="margin:0px;padding:0px">
+
+<p class="title">UCP <?php print $lang['settings'];?></p>
+<p style="text-align:justify"><?php print $lang['lf7_desc'];?></p>
+
+<div class="hr"></div>
+<table cellspacing="1" cellpadding="8" class="tbl">
+<tr class="tr1"><td class="tdr">
+<select style="width:120px" name="popup_ucp">
+<?php if($settings['popup_ucp']==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>><?php print $lang['yes'];?></option>
+<?php if($settings['popup_ucp']==0){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="0"<?php print $sel;?>><?php print $lang['no'];?></option>
+</select>
+</td><td><?php print $lang['popup_ucp'];?></td>
+</tr>
+<tr class="tr2"><td class="tdr">
+<select style="width:120px" name="ucp_effect">
+<?php if($settings['ucp_effect']==1){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="1"<?php print $sel;?>><?php print $lang['yes'];?></option>
+<?php if($settings['ucp_effect']==0){$sel=' selected="selected"';}else{$sel='';}?>
+<option value="0"<?php print $sel;?>><?php print $lang['no'];?></option>
+</select>
+</td><td><?php print $lang['ucp_effect'];?></td>
+</tr>
+<tr class="tr1">
+<?php $html_title=htmrem($settings['html_title']);?>
+<td class="tdr"><input type="text" style="width:115px" maxlength="32" name="html_title" value="<?php print $html_title;?>" />
+</td><td><?php print $lang['html_title'];?></td>
+</tr>
+<tr class="tr2">
+<td class="tdr"><input type="text" style="width:115px" maxlength="4" name="ucp_width" value="<?php print $settings['ucp_width'];?>" />
+</td><td><?php print $lang['ucp_width'];?></td>
+</tr>
+<tr class="tr1">
+<td class="tdr"><input type="text" style="width:115px" maxlength="4" name="ucp_height" value="<?php print $settings['ucp_height'];?>" />
+</td><td><?php print $lang['ucp_height'];?></td>
+</tr>
+</table>
+
+<p>
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.f1.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.f1.reset()" />
+</p>
+</form>
+</td></tr></table>

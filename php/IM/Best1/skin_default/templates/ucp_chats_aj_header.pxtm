@@ -1,0 +1,4 @@
+<table class="c_tbl" cellspacing="1" cellpadding="5">
+<tr><td class="c_tdt" colspan="5">
+<div style="float:right"><?php print $p_from.'-'.$p_to.' /'.$total;?></div>
+<b><?php print $lang['chatr_l'];?></b></td></tr>

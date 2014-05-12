@@ -1,0 +1,34 @@
+<div class="headbar">&nbsp;</div>
+<div class="toparea">
+<table cellspacing="5" style="margin-top:2px;width:100%"><tr>
+
+
+<td class="topbar1">
+<?php if(isset($_COOKIE['acpkey'])){?><a href="info.php?why=link" onclick="window.open('admin.php');return false">ACP</a> &middot; <?php }?>
+
+<a id="tb1" href="info.php?why=link" onclick="window.location='ucp_users.php';return false"><?php print $lang['users'];?></a> &middot; 
+<a id="tb2" href="info.php?why=link" onclick="window.location='ucp_chats.php';return false"><?php print $lang['chatr_s'];?> (<span id="chats">0</span>)</a> &middot; 
+<a id="tb4" href="info.php?why=link" onclick="window.location='ucp_settings.php';return false"><?php print $lang['settings'];?></a> &middot; 
+
+<a href="info.php?why=link" onclick="ucp_close(1);return false"><?php print $lang['close'];?></a>
+
+</td><td class="topbar2">
+
+<?php 
+switch($status){
+case 1:$txt=$lang['away'];break;
+case 2:$txt=$lang['na2'];break;
+case 3:$txt=$lang['dnd2'];break;
+case 4:$txt=$lang['invisible'];break;
+default:$txt=$lang['available'];break;}
+?>
+<a href="info.php?why=link" onclick="opa_st(document.getElementById('status_dv'),1);return false">
+<?php print '<img class="status_img" src="'.$skin_dir.'/images/status'.$status.'.png" alt="" />&nbsp;'.$txt;?></a>
+<div id="status_dv" class="status_div" onclick="opa_st(this,0)">
+<?php if($status!=0){?><a href="info.php?why=link" onclick="set_status(0);return false"><img class="status_img" src="<?php print $skin_dir;?>/images/status0.png" alt="" /> <?php print $lang['available'];?></a><?php }?>
+<?php if($status!=1){?><a href="info.php?why=link" onclick="set_status(1);return false"><img class="status_img" src="<?php print $skin_dir;?>/images/status1.png" alt="" /> <?php print $lang['away'];?></a><?php }?>
+</div></td></tr></table>
+
+</div>
+
+<div id="fpls" style="position:fixed;top:0px;right:0px;width:2px;height:2px;background-color:transparent"></div>

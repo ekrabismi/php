@@ -1,0 +1,7 @@
+<tr class="o_tr<?php print $tr;?>">
+<td class="o_ico"><img class="o_sts" src="<?php print $skin_dir;?>/images/status<?php print $status;?>.png" alt="" /></td>
+<td><a class="o_lnk" href="info.php?why=link" onclick="show_usr(<?php print $uid;?>);return false"><?php print $name;?></a> 
+<?php if($uid==$_SESSION['bmf_id'] && strstr($_SESSION['bmf_name'],'U-')){
+print ' (<a href="info.php?why=link" onclick="window.location=\'ucp_name.php\';return false">'.$lang['change_name'].'</a>)';}
+elseif($uid==$_SESSION['bmf_id']){print ' ('.$lang['thats_me'].')';}?>
+</td><td class="o_las"><?php print $last_seen;?></td></tr>

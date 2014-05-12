@@ -1,0 +1,73 @@
+<?php
+
+$help_title=array();
+$help_descr=array();
+
+/* to add an entry set $help_title[] and $help_descr[], you can use HTML/JS/CSS within both elements */
+
+$help_title[]='Kom igang!';
+$help_descr[]='Velkommen til vores Instant messenger (IM) hjælpe center! Her kan du finde nyttig information of hvad du kan bruge IM til.
+Brugergrænsefladen er meget simpel og minder om den som du normalt benytter.';
+
+
+
+$help_title[]='IM bar &raquo; Kontrolpanel &raquo; Chat vinduer';
+$help_descr[]='IM er delt op i 3 dele: [1] <b style="color:#a00">IM bar</b> som er synlig på alle sider, og giver dig information omkring online brugere, og hvem som vil chatte med dig,  [2] <b style="color:#a00"> Kontrolpanel (KP)</b> and [3] <b style="color:#a00">chat vinduer</b>.
+Du kan åbne kontrolpanelet ved at trykke på et aktivt element på IM baren. 
+<br /><img style="margin-top:10px" src="incl/hlp_interface1.png" alt="" />
+<img style="margin-top:10px" src="incl/hlp_interface2.png" alt="" />
+<img style="margin-top:10px" src="incl/hlp_interface3.png" alt="" /><br />
+<b>BRUGERE</b> fanen i dit kontrolpanel viser en liste over hvem er der online lige nu.
+<b>CHATS</b> fanen viser en liste over chat anmodninger du har sent, modtaget og blokeret, og under <b>INDSTILLINGER</b> kan du ændre dine indstillinger.';
+
+
+
+$help_title[]='Min status: Online, Ikke til stede, usynlig etc';
+$help_descr[]='For at vælge din online status [<b>Online</b>, <b>Ikke til stede</b>] klik oppe linket oppe i højre hjørne af dit kontrolpanel.
+<br /><br />
+Vær opmærksom på at når din status er <b>Forstyr ikke</b> er det kun dine venner som kan kontakte dig.
+<br />
+<div style="float:left;margin:6px"><img src="incl/hlp_status0.png" alt="" /> Online</div>
+<div style="float:left;margin:6px"><img src="incl/hlp_status1.png" alt="" /> Ikke til stede</div>';
+
+
+
+$help_title[]='Hvordan starter jeg en samtale med andre?';
+$help_descr[]='Klik på et hvilket som helst aktivt element for at vise kontrolpanelet. Vælg <b>BRUGERE</b> fanen. 
+Klik på hvilket som helst navn [Selv dit eget] og klik <b>ANMOD CHAT</b>. Så vil et popup vindue åbne. 
+Nu skal du vente på at din partner accepterer, blokere eller vælger ikke at svare.';
+
+
+
+$help_title[]='Hvad skal jeg gøre når nogle vil chatte med mig?';
+$help_descr[]='Når nogle vil chatte med dig, hører du en lyd, og IM baren vil ændre farve og udseende. 
+Åben kontrolpanelet, vælg <b>CHATS</b> fanen og <b>accepter</b> or <b>ignorer</b> anmodningen. 
+<br /><br />
+Vær opmærksom på at brugere som sendte anmodningen kan se din beslutning - et lille ikon viser statusen på jeres chat - 
+Blåt med et spørgsmål tegn - <b>Ikke taget stilling</b>, Grøn med afkrydsning - <b>accepteret</b> eller <b>ignoreret</b>.
+<br />
+<div style="float:left;margin:6px"><img src="incl/hlp_inv0.png" alt="" /> Ikke taget stilling</div>
+<div style="float:left;margin:6px"><img src="incl/hlp_inv1.png" alt="" /> Accepteret/Ignoreret</div>';
+
+
+
+$help_title[]='Chat sessioner: Send/Modtag beskeder';
+$help_descr[]='For at sende en besked skal du skrive den i tekstboksen nederst i chat-vinduet og trykke på ENTER.
+Chat vinduet vil afspille en lyd når du har fået en ny besked. Under <b>INDSTILLINGER</b> kan du vælge hvilken lyd du gerne vil hører, eller slå den helt fra.
+Der sker også nogle visuelle ting i titel bare på chat-vinduet: (<b>***</b>) - når din partner tilslutter eller forlader samtalen og (<b>abc</b>) Nye meddelelser.
+<br /><br />
+Du kan sende humørikoner med dine beskeder : klik på <b>MULIGHEDER &raquo; HUMØRIKONER</b> and klik på den eller dem du vil have.';
+
+
+
+
+$help_title[]='Hvordan indstiller jeg lyd og farver, og osv..';
+$help_descr[]='Åben <b>Kontrolpanelet &raquo; INDSTILLINGER</b>. De fleste af disse indstillinger så som sprog, tidszone osv. er nemme at forstå. 
+<b>Advarsel A</b> er den lyd du vil hører når nogle anmoder om at få lov at chatte med dig, <b>advarsel B</b> fortæller dig at der er kommet en ny besked.';
+
+
+
+$help_title[]='Offentlige computere';
+$help_descr[]='Hvis du bruger en offentlig computer er det meget vigtig at du husker at logge ud, da vi gemmer alle samtaler på vores server. Hvis ikke du husker at logge ud, kan den næste som bruger computeren se alle dine beskeder! Hvis du har været gæst skal du gå til <b>INDSTILLINGER</b> og klikke på <b>SLET IM COOKIE</b>.';
+
+?>

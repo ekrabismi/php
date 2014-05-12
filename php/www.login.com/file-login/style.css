@@ -1,0 +1,83 @@
+body {
+	 background-color:#C0DEED;
+}
+
+h1 {
+	color:  #009; 
+	font-weight:bolder;
+	text-transform:capitalize;
+}
+
+h2{
+	color: #00ACEE; 
+	font-weight:bolder;
+	text-transform:capitalize;
+}
+
+a
+{
+	text-decoration:none;
+	color:#333;
+	font-weight:bold;
+}
+.error{
+	color: #900; 
+	font-weight:bold;
+}
+
+scrdiv {
+     width:110%;
+     height:300px;
+	 overflow:auto;
+}
+
+
+#tbl1{
+	background-color:#98bf21;
+	width: 100%; 
+}
+
+#tbl2{
+	background-color:#666666;
+	width: 1364px;
+}
+
+#tbl3{
+	background-color:#C2C2C2;
+	width: 1364px;
+}
+
+#tbl4{
+	width: 1364px; 
+	background-color:#98bf21;
+}
+
+
+.pass1, .pass2{
+	background: #90F;
+	border:solid #009;
+}
+
+.button1{
+	background:#E2E2E2;
+	border:  groove #CFCFCF;
+	font-weight:bold;
+	cursor:pointer;
+	padding: 3px;
+}
+
+select {
+	background:#096;
+	font-weight:bold;
+	border:inset;
+}
+
+.selbox {
+    border:1px solid #ccc;
+	background-color: #9FFF9D;
+
+}
+
+.field1{
+	border: #3C0 solid;
+}

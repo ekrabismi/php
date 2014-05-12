@@ -1,0 +1,12 @@
+<body>
+
+<div style="text-align:center;background-color:transparent"><div class="mainbox">
+
+<div class="navbar1">
+<div style="float:right"><?php print $title;?></div>
+<a href="admin.php"><?php print $lang['main'];?></a> <b>&middot;</b>
+<a href="admin.php?q=settings"><?php print $lang['settings'];?></a> <b>&middot;</b>
+<a href="admin.php?q=looknfeel"><?php print $lang['lookfeel'];?></a>
+<?php if(isset($_COOKIE['acpkey'])){?> 
+<b>&middot;</b> <a href="admin.php?q=logout"><?php print $lang['logout'];?></a><?php }?>
+</div>

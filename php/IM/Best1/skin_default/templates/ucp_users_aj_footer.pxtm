@@ -1,0 +1,6 @@
+</table>
+<div style="text-align:right"><b>
+<?php if($from>0){?><a href="info.php?why=link" onclick="a=parseInt(document.forms.fms.start_fr.value);a-=10;document.forms.fms.start_fr.value=a;document.forms.fms.submit();return false"><?php print $lang['back'];?></a><?php }?>
+<?php if($from>0 && $total>$p_to){?> &middot; <?php }?>
+<?php if($total>$p_to){?><a href="info.php?why=link" onclick="a=parseInt(document.forms.fms.start_fr.value);a+=10;document.forms.fms.start_fr.value=a;document.forms.fms.submit();return false"><?php print $lang['next'];?></a><?php }?>
+</b></div>

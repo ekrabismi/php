@@ -1,0 +1,91 @@
+<script type="text/javascript"><!-- 
+
+function app_style(){
+a=document.getElementById('cnt');b=document.getElementById('bar_style').value;
+a.innerHTML='<div id="blabimbar" style="'+b+'"><?php
+$elements=$settings['bar_elements'];
+$elements=str_replace('{WELCOME}',$lang['welcome'],$elements);
+$elements=str_replace('{USER}','USER',$elements);
+$elements=str_replace('{ONLINE_NUM}','12',$elements);
+$elements=str_replace('{ONLINE_BOOL}',$lang['online'],$elements);
+$elements=str_replace('{ONLINE_LINK}','<a href="info.php?why=link" onclick="return false">',$elements);
+$elements=str_replace('{ONLINE_LANG}',$lang['online'],$elements);
+$elements=str_replace('{HELP_LINK}','<a href="info.php?why=link" onclick="return false">',$elements);
+$elements=str_replace('{HELP_LANG}',$lang['help'],$elements);
+$elements=str_replace('{SETTINGS_LINK}','<a href="info.php?why=link" onclick="return false">',$elements);
+$elements=str_replace('{SETTINGS_LANG}',$lang['settings'],$elements);
+$elements=str_replace('{CHATBOX_LINK}','<a href="info.php?why=link" onclick="return false">',$elements);
+$elements=str_replace('{CHATBOX_LANG}',$lang['cbox'],$elements);
+$elements=str_replace('{CLOSE_LINK}','</a>',$elements);
+$elements=str_replace('{SKIN_DIR}',$site_to_bim.$skin_dir,$elements);
+$elements=str_replace("\r",' ',$elements);
+$elements=str_replace("\n",' ',$elements);
+$elements=str_replace("'",'',$elements);
+print $elements;
+?></div>';
+}
+
+function pset(a){
+a=parseInt(a);x="\r\n";
+switch(a){
+case 0:
+b='font-family:tahoma,sans-serif; '+x+'font-size:11px; '+x+'float:left; padding:1px; '+x+'color:#000; '+x+'background-color:#eee; '+x+'font-weight:bold; '+x+'border:1px solid #999;';
+break;case 1:
+b='color:#000; '+x+'background-color:#fff; '+x+'font-weight:bold; '+x+'text-transform:uppercase; '+x+'margin:0px; '+x+'padding:1px; '+x+'width:auto; '+x+'height:auto; '+x+'position:fixed; '+x+'float:left; '+x+'top:auto; '+x+'bottom:-1px; '+x+'left:auto; '+x+'right:8px; '+x+'border:1px solid #aaa; '+x+'z-index:1;';
+break;case 2: 
+b='font-family:verdana,sans-serif; '+x+'font-size:9px; '+x+'color:#000; '+x+'background-color:#F5F5FF; '+x+'font-weight:bold; '+x+'text-transform:uppercase; '+x+'margin:0px; '+x+'padding:1px; '+x+'width:auto; '+x+'height:auto; '+x+'position:fixed; '+x+'float:left; '+x+'top:8px; '+x+'bottom:auto; '+x+'left:8px; '+x+'right:auto; '+x+'border:1px solid #098DCE; '+x+'border-bottom-width:2px; '+x+'z-index:1;';
+break;case 3: 
+b='font-family:verdana,sans-serif; '+x+'font-size:9px; '+x+'color:#000; '+x+'background-color:#E1EBF2; '+x+'font-weight:bold; '+x+'text-transform:uppercase; '+x+'margin:0px; '+x+'padding:1px; '+x+'width:auto; '+x+'height:auto; '+x+'position:fixed; '+x+'float:left; '+x+'top:auto; '+x+'bottom:8px; '+x+'left:auto; '+x+'right:8px; '+x+'border:1px solid #098DCE; '+x+'border-top-width:2px; '+x+'z-index:1;';
+break;
+
+default:b='';break;}
+
+document.getElementById('bar_style').value=b;
+app_style();
+}
+
+// --></script>
+
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+
+<div id="nb2" style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=looknfeel"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=bbstyle"><?php print $lang['bar'].' '.$lang['style'];?></a> &middot;<br />
+<a href="admin.php?q=bbelements"><?php print $lang['bar'].' '.$lang['elements'];?></a> &middot;<br />
+<a href="admin.php?q=ucp">UCP <?php print $lang['settings'];?></a> &middot;<br />
+</div>
+</td><td valign="top" class="content">
+<div class="navbar2" style="padding:3px;float:right;border:1px solid #C2CFDF">
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='none';return false">&laquo;</a>
+<a href="info.php?why=link" onclick="document.getElementById('nb2').style.display='block';return false">&raquo;</a>
+</div>
+<form id="f1" action="admin.php?q=bbstyle" method="post" style="margin:0px;padding:0px">
+
+<p class="title">BlaB!IM <?php print $lang['bar'].' '.$lang['style'];?></p>
+<p style="text-align:justify"><?php print $lang['lf1_desc'];?></p>
+
+<div class="hr"></div>
+
+<table cellpadding="0" cellspacing="0" style="width:100%"><tr><td style="width:60%"><div id="cnt"></div></td>
+<td  style="width:40%;text-align:right">
+<select style="float:right" onchange="pset(this.value);app_style();this.value='x'">
+<option value="x"><?php print $lang['presets'];?></option>
+<option value="0">Relative</option>
+<option value="1">Fixed: FB style</option>
+<option value="2">Fixed: T/L *</option>
+<option value="3">Fixed: B/R *</option>
+</select></td></tr></table>
+<?php $bar_style=htmrem($settings['bar_style']);?>
+
+<p><textarea id="bar_style" name="bar_style" style="width:100%;height:220px;overflow:auto" cols="10" rows="5"><?php print $bar_style;?></textarea></p>
+
+<p>
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.f1.submit()" />
+<input class="btn" type="button" value="<?php print $lang['preview'];?>" onclick="app_style()" id="prv" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.f1.reset();app_style()" />
+</p></form>
+
+
+</td></tr></table>
+<script type="text/javascript">app_style();</script>

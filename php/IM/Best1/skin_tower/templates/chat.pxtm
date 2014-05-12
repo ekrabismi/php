@@ -1,0 +1,54 @@
+<body onload="msie_factor+=18;set_ie6size()">
+
+<div class="topchat">
+<table cellspacing="3" style="width:100%">
+<tr><td class="topchatbar1"><div id="rec_onl"></div></td>
+
+<td class="topchatbar2">
+<a href="info.php?why=link" onclick="opa_st(document.getElementById('s_emo'),1);return false">
+<img src="<?php print $skin_dir;?>/images/addons.png" alt="" /> <?php print $lang['smilies'];?></a>
+</td></tr></table>
+</div>
+
+<div id="mda" class="midchat" onscroll="if(lockscr==0){lockscr=1;opa_st(document.getElementById('autoscrl'),1)}"></div>
+
+<div class="botchat">
+<table cellspacing="1" style="width:100%"><tr><td>
+<textarea id="ln" cols="50" rows="2" onblur="count_txt(this,<?php print $settings['post_length'];?>)" onkeypress="count_txt(this,<?php print $settings['post_length'];?>);if(event.keyCode==13){chat_post=this.value;force_cr();this.value='';return false}"></textarea>
+</td><td style="width:55px" class="rgt">
+<a href="info.php?why=link" onclick="count_txt(document.getElementById('ln'),<?php print $settings['post_length'];?>);chat_post=document.getElementById('ln').value;force_cr();document.getElementById('ln').value='';return false">
+<img style="position:relative;margin:2px" src="<?php print $skin_dir;?>/images/submit.png" alt="" onmouseover="this.style.left='1px'" onmouseout="this.style.left='-1px'" />
+</a></td></tr></table>
+</div>
+
+<div id="autoscrl" class="box_ascr"><a href="info.php?why=link" onclick="lockscr=0;opa_st(document.getElementById('autoscrl'),0);return false"><?php print $lang['autoscroll'];?></a></div>
+
+<div id="s_emo" class="box_emtn"><script type="text/javascript">smiles=new Array(<?php print $sm_tag;?>); sfiles=new Array(<?php print $sm_img;?>); smilie_box();</script>
+<br style="clear:both" /><div class="box_barr" style="float:right;margin-top:2px">
+<a href="info.php?why=link" onclick="opa_st(document.getElementById('s_emo'),0);return false"><?php print $lang['close'];?></a>
+</div></div>
+
+<script type="text/javascript">
+set_ie6size(); window.onresize=set_ie6size;
+
+u=<?php print $u;?>;
+img_onl=skin_dir+'/images/chatusr0.png';
+img_off=skin_dir+'/images/chatusr1.png';
+
+lang_user='<?php print $lang['this_user']?>';
+lang_chatsess='<?php print $lang['chat_sess'];?>';
+lang_chatnor1='<?php if(isset($_GET['preview'])){print $lang['chat_nor0'];}else{print $lang['chat_nor1'];}?>';
+lang_chatnor2='<?php print $lang['chat_nor2'];?>';
+lang_chatreq='<?php print $lang['req_chat'];?>';
+chat_updt=<?php print $settings['chat_refresh'];?>; 
+chat_intv=<?php print $settings['m_interval'];?>; 
+flsh_cht=set_snd('<?php print $skin_dir.'/sounds/snd'. $options[5];?>.swf');
+
+chat_started=0; curr_status=0; window.onfocus=remv_astr
+setTimeout('chat_recev()',<?php print $settings['ajax_delay'];?>*msie);
+brc=setInterval('chat_recev()',chat_updt*1000);
+document.getElementById('ln').disabled=true; setTimeout('txt_esc()',chat_intv);
+
+</script>
+
+</body></html>

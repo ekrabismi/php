@@ -1,0 +1,66 @@
+<?php
+
+$help_title=array();
+$help_descr=array();
+
+/* to add an entry set $help_title[] and $help_descr[], you can use HTML/JS/CSS within both elements */
+
+$help_title[]='Quick start';
+$help_descr[]='Welcome to our Instant Messenger (IM) help center! Here you can find some useful information about the features that our Instant Messenger offers.
+The IM interface is logical to use, intuitive and as simple as possible. ';
+
+
+
+$help_title[]='IM bar &raquo; UCP &raquo; Chat windows';
+$help_descr[]='The IM consists of 3 parts: [1] <b style="color:#a00">IM bar</b> which is visible from any page and gives you information about the online users, who initiates a chat with you etc,  [2] <b style="color:#a00">User Control Panel (UCP)</b> and [3] <b style="color:#a00">chat windows</b>.
+You can display UCP by clicking on any active element of the IM bar. 
+<br /><img style="margin-top:10px" src="incl/hlp_interface1.png" alt="" />
+<img style="margin-top:10px" src="incl/hlp_interface2.png" alt="" />
+<img style="margin-top:10px" src="incl/hlp_interface3.png" alt="" /><br />
+<b>USERS</b> tab of your UCP shows a list of users that are currently online. 
+<b>CHATS</b> tab shows a list of the chat requests you sent or received, and the <b>SETTINGS</b> tab allows you to change the default settings.';
+
+
+
+$help_title[]='My status: Online or Away';
+$help_descr[]='To select your online status [<b>Online</b> or <b>Away</b>] click on the link at the top/right corner of UCP. 
+<br />
+<div style="float:left;margin:6px"><img src="incl/hlp_status0.png" alt="" /> Online</div>
+<div style="float:left;margin:6px"><img src="incl/hlp_status1.png" alt="" /> Away</div>';
+
+
+
+$help_title[]='How do I start a chat session with someone?';
+$help_descr[]='Click on any active element of the IM bar to display UCP. Select the <b>USERS</b> tab. 
+Click on any name from the list [even yours] and click <b>REQUEST CHAT</b>. A pop-up window will open. 
+Now wait for the other user to accept your chat request.';
+
+
+
+$help_title[]='What to do when someone wants to chat with me?';
+$help_descr[]='When someone wants to chat with you, you will hear a sound alert and the IM bar will change its elements and colors. 
+Open UCP, select the <b>CHATS</b> tab and <b>accept</b> or <b>skip</b> the request. 
+<br /><br />
+Note that the user who sent the request will be aware of your decision - a tiny icon shows the status of the request - 
+blue with a question mark - <b>unseen</b>, green with a check mark - <b>accepted</b> or <b>skipped</b>.
+<br />
+<div style="float:left;margin:6px"><img src="incl/hlp_inv0.png" alt="" /> Unseen</div>
+<div style="float:left;margin:6px"><img src="incl/hlp_inv1.png" alt="" /> Accepted/Skipped</div>';
+
+
+$help_title[]='Chat sessions: Send/Receive messages';
+$help_descr[]='To send a message type in the textbox at the bottom of the chat window and then press ENTER. 
+The chat window will play a sound when a new message arrives. You can choose what sound to hear and even turn this feature off from <b>SETTINGS</b>.
+There are also visual notifications in the title bar of the chat window: (<b>***</b>) - when the other chatter enters/leaves the chat session and (<b>abc</b>) on new messages. 
+You are allowed to insert emoticons in your messages: click on <b>EMOTICONS</b> and then click on one[s] that is appropriate.';
+
+
+$help_title[]='How do I adjust colors, sounds etc';
+$help_descr[]='Open <b>UCP &raquo; SETTINGS</b>. Most of the things on this page such as language, timezone etc are easy to understand. 
+<b>Alert A</b> is the sound you hear when someone wants to chat with you, <b>alert B</b> is notifying you that you have a new chat message.';
+
+
+$help_title[]='Using a public computer';
+$help_descr[]='If you are using a public computer make sure that the next person who uses the computer will not be able to see your chat sessions. Go to <b>SETTINGS</b> and click on <b>DELETE IM COOKIE</b>.';
+
+?>

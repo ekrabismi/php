@@ -1,0 +1,11 @@
+; $Id: pagination.info,v 1.1.4.5.2.1 
+name = "Pagination"
+description = "This modules provide pagination theme."
+core = 6.x
+package = "Pagination"
+
+version = "6.x-1.x-dev"
+core = "6.x"
+project = "pagination"
+datestamp = "1237680077"
+

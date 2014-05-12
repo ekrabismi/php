@@ -1,0 +1,89 @@
+/* global elements */
+body{color:#000;background-color:#fff;background-image:url(images/bg1.png);background-repeat:repeat-x;padding:0px;margin:auto;overflow:hidden}
+td,p,div{font-family:verdana,sans-serif;font-size:9px;text-align:left}
+input,select{font-family:verdana,sans-serif;font-size:9px;border:1px solid #819DB2;padding:2px}
+textarea{color:#000;background-color:#fff;width:99%;height:28px;padding:2px;font-family:verdana,sans-serif;font-size:9px;border:1px solid #819DB2;overflow:auto}
+img{border-width:0px}
+
+/* UCP elements: (all: .headbar & .top-.mid-.bot areas) (chatbox: .headbar, .toparea, .midarea2 and .botarea2)  */
+.navbar{display:none;color:#000;background-color:#f2f2f2;position:absolute;left:1px;top:22px;padding:3px;border:1px solid #819DB2}
+.toparea{position:fixed;width:100%;left:0px;height:25px;top:0px;border-top:2px solid #7EA0B7;}
+.midarea{position:fixed;top:30px;left:0px;width:100%;bottom:25px;overflow:auto;background-image:url(images/loading0.gif);background-position:center;background-repeat:no-repeat}
+.botarea{padding:2px;background-color:#fff;background-image:url(images/bg2.png);position:fixed;width:100%;left:0px;height:15px;bottom:0px;border-bottom:2px solid #098DCE}
+.midarea2{position:fixed;top:30px;left:0px;width:100%;bottom:50px;overflow:auto;background-image:url(images/loading0.gif);background-position:center;background-repeat:no-repeat}
+.botarea2{padding:2px;background-color:#fff;background-image:url(images/bg2.png);position:fixed;width:100%;left:0px;height:40px;bottom:0px;border-bottom:2px solid #098DCE}
+
+/* UCP elements: splitting .toparea & .botarea into left/right */
+.topbar1{font-weight:bold;text-transform:uppercase;white-space:nowrap;text-align:left}
+.topbar2{font-weight:bold;white-space:nowrap;text-transform:uppercase;text-align:right}
+.botbar1{font-weight:bold;text-transform:uppercase;white-space:nowrap;text-align:left;font-size:9px}
+.botbar2{font-weight:bold;text-transform:uppercase;white-space:nowrap;text-align:right;font-size:9px}
+
+/* chat window elements */
+.topchat{background-color:#fff;background-image:url(images/bg1.png);position:fixed;width:100%;left:0px;height:20px;top:0px;}
+.midchat{position:fixed;top:21px;left:0px;width:100%;bottom:45px;overflow:auto;background-image:url(images/loading0.gif);background-position:center;background-repeat:no-repeat}
+.botchat{padding:2px;background-color:#fff;background-image:url(images/bg2.png);position:fixed;width:100%;left:0px;height:40px;bottom:0px;}
+
+/* splitting .topchat into left/right */
+.topchatbar1{font-weight:bold;text-transform:uppercase;text-align:left;white-space:nowrap}
+.topchatbar2{font-weight:bold;text-transform:uppercase;text-align:right;white-space:nowrap}
+
+#onltable{width:95%;margin:auto;margin-top:2px;text-align:center;display:none}  /* data tables || */
+
+.o_tbl{border:1px solid #DBE5ED;width:100%}                           /* UsersTable  OT */
+.o_tr0{background-color:#F2F7FA}                                      /* OT->row 1   TR */
+.o_tr1{background-color:#E8F0F6}                                      /* OT->row 2   TR */
+.o_tdt{text-transform:uppercase;color:#000;background-color:#DBE5ED}  /* OT->title   TD */
+.o_ico{width:2%}                                                      /* OT->icon    TD */
+.o_oth{width:2%;background-color:#EEF4F9}                             /* OT->other   TD */
+.o_lnk{font-weight:bold}                                              /* OT->link    AA */
+.o_sts{position:relative;top:1px}                                     /* OT->status IMG */
+.o_flg{border:1px solid #fff;opacity:0.9}                             /* OT->flag   IMG */
+.o_opa{opacity:0.9}
+
+.c_tbl{border:1px solid #DBE5ED;width:100%}                           /* ChatsTable  OT */
+.c_tr0{background-color:#F2F7FA}                                      /* CT->row 1   TR */
+.c_tr1{background-color:#E8F0F6}                                      /* CT->row 2   TR */
+.c_tdt{text-transform:uppercase;color:#000;background-color:#DBE5ED}  /* CT->title   TD */
+.c_ico{width:2%}                                                      /* CT->icon    TD */
+.c_cmm{width:35%;text-align:center}                                   /* CT->comm    TD */
+.c_oth{width:35%;white-space:nowrap}                                  /* CT->user    TD */
+.c_drc{text-align:right;font-size:8px}                                /* CT->to/from SP */
+.c_lnk{font-weight:bold}                                              /* CT->link    AA */
+
+.box_user{display:none;position:fixed;bottom:25px;width:230px;right:5px;overflow:hidden;background-color:#E4EDF5;color:#000;border:1px solid #819DB2;padding:8px}   /* box: user profile */
+.box_emtn{display:none;position:fixed;bottom:50px;width:230px;right:5px;overflow:hidden;background-color:#E4EDF5;color:#000;border:1px solid #819DB2;padding:8px}   /* box: smilies */
+.box_vdeo{display:none;position:fixed;bottom:50px;width:230px;right:5px;overflow:hidden;background-color:#E4EDF5;color:#000;border:1px solid #819DB2;padding:0px}   /* box: youtube videos */
+
+.box_ascr{position:fixed;left:5px;bottom:48px;background-color:#E4EDF5;color:#000;padding:5px;text-transform:uppercase;font-weight:bold;border:1px solid #819DB2;display:none} /* box: autoscroll */
+.box_avtr{float:right;padding:1px;border:1px solid #819DB2;width:120px;height:120px}      /* avatar image */
+.box_barr{font-weight:bold;text-transform:uppercase;white-space:nowrap;font-size:9px}     /* chatbox/chatwindow: history-smilies-shortcuts line */
+.box_simg{margin:1px}                                                                     /* smilie pic */
+.box_tble{width:100%;background-color:#fff}                                               /* shortcuts table */
+.box_titl{text-transform:uppercase;color:#000;background-color:#DBE5ED;font-weight:bold}  /* shortcuts table: title */
+.box_tbtd{padding:2px}                                                                    /* shortcuts table: TD */
+.box_tr0{background-color:#F2F7FA}                                                        /* shortcuts table: TR */
+.box_tr1{background-color:#E8F0F6}                                                        /* shortcuts table: TR */
+
+.rgt{text-align:right}                                                                                                                  /* align: right */                                                         
+.ste{width:120px}                                                                                                                       /* settings: SELECT */
+.sti{width:12px;height:12px;border:1px solid #000;margin:1px;float:left}                                                                /* color picker trans image */
+.hlp{line-height:140%;margin:auto;text-align:justify;width:90%}                                                                         /* help divs */       
+.ini{float:right;width:128px;height:96px;border:1px solid #fff;margin:1px}                                                              /* posted image */
+.onl_cbox{margin:5px;padding:5px;background-color:#F2F7FA;border:1px solid #DBE5ED;font-weight:bold}                                    /* who's online - chatbox */
+.btn{font-weight:bold;text-transform:uppercase;font-size:9px;padding:3px;color:#000;background-color:#E5EEF5;border:1px solid #819DB2}  /* buttons */
+.rdr{width:85%;padding:8px;margin:auto;margin-top:150px;color:#000;background-color:#E8F0F6;border:1px solid #DBE5ED;text-align:center} /* redirect DIV */
+
+.nav_tbl{background-color:#fff}
+
+/* status: div & image */
+.status_img{position:relative;top:1px}
+.status_div{display:none;position:absolute;right:1px;top:22px;padding:1px;color:#000;background-color:#f2f2f2;border:1px solid #819DB2}
+
+.tx0{margin-left:5px} .tx1{} .tx2{} /* chat text */
+
+/* links: colors & underline */
+a:link{color:#105289;background-color:transparent;text-decoration:none}
+a:visited{color:#105289;background-color:transparent;text-decoration:none}
+a:hover{color:#BC2A4D;background-color:transparent}
+a:active{color:#BC2A4D;background-color:transparent}

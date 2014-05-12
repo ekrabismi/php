@@ -1,0 +1,25 @@
+<table cellspacing="1" cellpadding="0"><tr>
+<td valign="top" class="navbar2">
+<div style="margin:10px;text-align:right;white-space:nowrap">
+<a href="admin.php?q=settings"><?php print $lang['overview'];?></a> &middot;<br />
+<a href="admin.php?q=options"><?php print $lang['settings'];?></a> &middot;<br />
+<a href="admin.php?q=database"><?php print $lang['database'];?></a> &middot;<br />
+<a href="admin.php?q=acpkey"><?php print $lang['acpkey'];?></a> &middot;<br />
+</div></td><td valign="top" class="content">
+
+<p class="title"><?php print $lang['overview'];?></p>
+<p style="text-align:justify"><?php print $lang['st0_desc'];?></p>
+<div class="title" style="text-align:right"><b><a href="info.php?why=link" onclick="window.location='http://hot-things.net/cs/articles.php?cid=13';return false"><?php print $lang['o_manual'];?></a></b></div>
+
+<div class="hr"></div>
+<?php $notebook=htmrem($settings['notebook']); ?>
+<form id="fn" action="admin.php" method="post" style="margin:0px;padding:0px">
+<div class="title"><?php print $lang['notebook'];?></div>
+<p><textarea  name="notebook" style="width:100%;height:150px;overflow:auto" cols="10" rows="5"><?php print $notebook;?></textarea></p>
+<p>
+<input type="hidden" name="rdr" value="2" />
+<input class="btn" type="button" value="<?php print $lang['save'];?>" onclick="document.forms.fn.submit()" />
+<input class="btn" type="button" value="<?php print $lang['reset'];?>" onclick="document.forms.fn.reset()" />
+</p></form>
+
+</td></tr></table>
