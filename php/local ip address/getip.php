@@ -1,5 +1,20 @@
 <?php 
-//180.149.31.104
-$Ip = GetHostByName(isset($REMOTE_ADDR));
+$ip = gethostbyname(isset($REMOTE_ADDR));
+	if(!empty($ip))
+	 {
+	  
+	 }
+	elseif (!empty($_SERVER['HTTP_CLIENT_IP']))
+	{
+     $ip = $_SERVER['HTTP_CLIENT_IP'];
+	}
+	elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) 
+	{
+		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	} 
+	else 
+	{
+		$ip = $_SERVER['REMOTE_ADDR'];
+	}
 echo "<br> Your ip : " .$Ip; 
 ?>
