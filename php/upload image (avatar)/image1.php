@@ -48,7 +48,7 @@
 		 $ftype = $_FILES['avatar']['type'];
 		 
 		 $ftype = explode("/",$ftype);
-		 
+		 //$ftype[1] is file extention
 		 if($ftype[0]!='image')
 		 {
 			 echo "<script>alert('Please select a image file.');</script>";
