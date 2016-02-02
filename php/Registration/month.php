@@ -1,4 +1,4 @@
-<select name="month" id="month" onchange="" size="1">
+<select name="my_month" id="my_month" onchange="" size="1">
     <option value="01">January</option>
     <option value="02">February</option>
     <option value="03">March</option>
